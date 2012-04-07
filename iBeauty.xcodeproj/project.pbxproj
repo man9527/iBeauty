@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A9781D03152FF92C00E8E887 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9781D02152FF92C00E8E887 /* UIKit.framework */; };
+		A9781D05152FF92C00E8E887 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9781D04152FF92C00E8E887 /* Foundation.framework */; };
+		A9781D07152FF92C00E8E887 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9781D06152FF92C00E8E887 /* CoreGraphics.framework */; };
+		A9781D0D152FF92C00E8E887 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9781D0B152FF92C00E8E887 /* InfoPlist.strings */; };
+		A9781D0F152FF92C00E8E887 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9781D0E152FF92C00E8E887 /* main.m */; };
+		A9781D13152FF92C00E8E887 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9781D12152FF92C00E8E887 /* AppDelegate.m */; };
+		A9781D16152FF92C00E8E887 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9781D14152FF92C00E8E887 /* MainStoryboard.storyboard */; };
+		A9781D19152FF92C00E8E887 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9781D18152FF92C00E8E887 /* FirstViewController.m */; };
+		A9781D1B152FF92C00E8E887 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = A9781D1A152FF92C00E8E887 /* first.png */; };
+		A9781D1D152FF92C00E8E887 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9781D1C152FF92C00E8E887 /* first@2x.png */; };
+		A9781D20152FF92C00E8E887 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9781D1F152FF92C00E8E887 /* SecondViewController.m */; };
+		A9781D22152FF92C00E8E887 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = A9781D21152FF92C00E8E887 /* second.png */; };
+		A9781D24152FF92C00E8E887 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9781D23152FF92C00E8E887 /* second@2x.png */; };
+		A9781D2C152FF92C00E8E887 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9781D2B152FF92C00E8E887 /* SenTestingKit.framework */; };
+		A9781D2D152FF92C00E8E887 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9781D02152FF92C00E8E887 /* UIKit.framework */; };
+		A9781D2E152FF92C00E8E887 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9781D04152FF92C00E8E887 /* Foundation.framework */; };
+		A9781D36152FF92C00E8E887 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9781D34152FF92C00E8E887 /* InfoPlist.strings */; };
+		A9781D39152FF92C00E8E887 /* iBeautyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A9781D38152FF92C00E8E887 /* iBeautyTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A9781D2F152FF92C00E8E887 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9781CF5152FF92B00E8E887 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A9781CFD152FF92C00E8E887;
+			remoteInfo = iBeauty;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A9781CFE152FF92C00E8E887 /* iBeauty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBeauty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9781D02152FF92C00E8E887 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A9781D04152FF92C00E8E887 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A9781D06152FF92C00E8E887 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A9781D0A152FF92C00E8E887 /* iBeauty-Info.plist */ = {isa = PBXFileReference; path = "iBeauty-Info.plist"; sourceTree = "<group>"; };
+		A9781D0C152FF92C00E8E887 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A9781D0E152FF92C00E8E887 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A9781D10152FF92C00E8E887 /* iBeauty-Prefix.pch */ = {isa = PBXFileReference; path = "iBeauty-Prefix.pch"; sourceTree = "<group>"; };
+		A9781D11152FF92C00E8E887 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		A9781D12152FF92C00E8E887 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A9781D15152FF92C00E8E887 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		A9781D17152FF92C00E8E887 /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		A9781D18152FF92C00E8E887 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		A9781D1A152FF92C00E8E887 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		A9781D1C152FF92C00E8E887 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		A9781D1E152FF92C00E8E887 /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		A9781D1F152FF92C00E8E887 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		A9781D21152FF92C00E8E887 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		A9781D23152FF92C00E8E887 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		A9781D2A152FF92C00E8E887 /* iBeautyTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBeautyTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9781D2B152FF92C00E8E887 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		A9781D33152FF92C00E8E887 /* iBeautyTests-Info.plist */ = {isa = PBXFileReference; path = "iBeautyTests-Info.plist"; sourceTree = "<group>"; };
+		A9781D35152FF92C00E8E887 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A9781D37152FF92C00E8E887 /* iBeautyTests.h */ = {isa = PBXFileReference; path = iBeautyTests.h; sourceTree = "<group>"; };
+		A9781D38152FF92C00E8E887 /* iBeautyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iBeautyTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A9781CFB152FF92C00E8E887 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9781D03152FF92C00E8E887 /* UIKit.framework in Frameworks */,
+				A9781D05152FF92C00E8E887 /* Foundation.framework in Frameworks */,
+				A9781D07152FF92C00E8E887 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9781D26152FF92C00E8E887 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9781D2C152FF92C00E8E887 /* SenTestingKit.framework in Frameworks */,
+				A9781D2D152FF92C00E8E887 /* UIKit.framework in Frameworks */,
+				A9781D2E152FF92C00E8E887 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A9781CF3152FF92B00E8E887 = {
+			isa = PBXGroup;
+			children = (
+				A9781D08152FF92C00E8E887 /* iBeauty */,
+				A9781D31152FF92C00E8E887 /* iBeautyTests */,
+				A9781D01152FF92C00E8E887 /* Frameworks */,
+				A9781CFF152FF92C00E8E887 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A9781CFF152FF92C00E8E887 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A9781CFE152FF92C00E8E887 /* iBeauty.app */,
+				A9781D2A152FF92C00E8E887 /* iBeautyTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A9781D01152FF92C00E8E887 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9781D02152FF92C00E8E887 /* UIKit.framework */,
+				A9781D04152FF92C00E8E887 /* Foundation.framework */,
+				A9781D06152FF92C00E8E887 /* CoreGraphics.framework */,
+				A9781D2B152FF92C00E8E887 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9781D08152FF92C00E8E887 /* iBeauty */ = {
+			isa = PBXGroup;
+			children = (
+				A9781D11152FF92C00E8E887 /* AppDelegate.h */,
+				A9781D12152FF92C00E8E887 /* AppDelegate.m */,
+				A9781D14152FF92C00E8E887 /* MainStoryboard.storyboard */,
+				A9781D17152FF92C00E8E887 /* FirstViewController.h */,
+				A9781D18152FF92C00E8E887 /* FirstViewController.m */,
+				A9781D1A152FF92C00E8E887 /* first.png */,
+				A9781D1C152FF92C00E8E887 /* first@2x.png */,
+				A9781D1E152FF92C00E8E887 /* SecondViewController.h */,
+				A9781D1F152FF92C00E8E887 /* SecondViewController.m */,
+				A9781D21152FF92C00E8E887 /* second.png */,
+				A9781D23152FF92C00E8E887 /* second@2x.png */,
+				A9781D09152FF92C00E8E887 /* Supporting Files */,
+			);
+			path = iBeauty;
+			sourceTree = "<group>";
+		};
+		A9781D09152FF92C00E8E887 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A9781D0A152FF92C00E8E887 /* iBeauty-Info.plist */,
+				A9781D0B152FF92C00E8E887 /* InfoPlist.strings */,
+				A9781D0E152FF92C00E8E887 /* main.m */,
+				A9781D10152FF92C00E8E887 /* iBeauty-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A9781D31152FF92C00E8E887 /* iBeautyTests */ = {
+			isa = PBXGroup;
+			children = (
+				A9781D37152FF92C00E8E887 /* iBeautyTests.h */,
+				A9781D38152FF92C00E8E887 /* iBeautyTests.m */,
+				A9781D32152FF92C00E8E887 /* Supporting Files */,
+			);
+			path = iBeautyTests;
+			sourceTree = "<group>";
+		};
+		A9781D32152FF92C00E8E887 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A9781D33152FF92C00E8E887 /* iBeautyTests-Info.plist */,
+				A9781D34152FF92C00E8E887 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A9781CFD152FF92C00E8E887 /* iBeauty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9781D3C152FF92C00E8E887 /* Build configuration list for PBXNativeTarget "iBeauty" */;
+			buildPhases = (
+				A9781CFA152FF92C00E8E887 /* Sources */,
+				A9781CFB152FF92C00E8E887 /* Frameworks */,
+				A9781CFC152FF92C00E8E887 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iBeauty;
+			productName = iBeauty;
+			productReference = A9781CFE152FF92C00E8E887 /* iBeauty.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A9781D29152FF92C00E8E887 /* iBeautyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9781D3F152FF92C00E8E887 /* Build configuration list for PBXNativeTarget "iBeautyTests" */;
+			buildPhases = (
+				A9781D25152FF92C00E8E887 /* Sources */,
+				A9781D26152FF92C00E8E887 /* Frameworks */,
+				A9781D27152FF92C00E8E887 /* Resources */,
+				A9781D28152FF92C00E8E887 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A9781D30152FF92C00E8E887 /* PBXTargetDependency */,
+			);
+			name = iBeautyTests;
+			productName = iBeautyTests;
+			productReference = A9781D2A152FF92C00E8E887 /* iBeautyTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A9781CF5152FF92B00E8E887 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = A9781CF8152FF92B00E8E887 /* Build configuration list for PBXProject "iBeauty" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A9781CF3152FF92B00E8E887;
+			productRefGroup = A9781CFF152FF92C00E8E887 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A9781CFD152FF92C00E8E887 /* iBeauty */,
+				A9781D29152FF92C00E8E887 /* iBeautyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A9781CFC152FF92C00E8E887 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9781D0D152FF92C00E8E887 /* InfoPlist.strings in Resources */,
+				A9781D16152FF92C00E8E887 /* MainStoryboard.storyboard in Resources */,
+				A9781D1B152FF92C00E8E887 /* first.png in Resources */,
+				A9781D1D152FF92C00E8E887 /* first@2x.png in Resources */,
+				A9781D22152FF92C00E8E887 /* second.png in Resources */,
+				A9781D24152FF92C00E8E887 /* second@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9781D27152FF92C00E8E887 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9781D36152FF92C00E8E887 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A9781D28152FF92C00E8E887 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A9781CFA152FF92C00E8E887 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9781D0F152FF92C00E8E887 /* main.m in Sources */,
+				A9781D13152FF92C00E8E887 /* AppDelegate.m in Sources */,
+				A9781D19152FF92C00E8E887 /* FirstViewController.m in Sources */,
+				A9781D20152FF92C00E8E887 /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9781D25152FF92C00E8E887 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9781D39152FF92C00E8E887 /* iBeautyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A9781D30152FF92C00E8E887 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A9781CFD152FF92C00E8E887 /* iBeauty */;
+			targetProxy = A9781D2F152FF92C00E8E887 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A9781D0B152FF92C00E8E887 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9781D0C152FF92C00E8E887 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A9781D14152FF92C00E8E887 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9781D15152FF92C00E8E887 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		A9781D34152FF92C00E8E887 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9781D35152FF92C00E8E887 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A9781D3A152FF92C00E8E887 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A9781D3B152FF92C00E8E887 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A9781D3D152FF92C00E8E887 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iBeauty/iBeauty-Prefix.pch";
+				INFOPLIST_FILE = "iBeauty/iBeauty-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A9781D3E152FF92C00E8E887 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iBeauty/iBeauty-Prefix.pch";
+				INFOPLIST_FILE = "iBeauty/iBeauty-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A9781D40152FF92C00E8E887 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iBeauty.app/iBeauty";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iBeauty/iBeauty-Prefix.pch";
+				INFOPLIST_FILE = "iBeautyTests/iBeautyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		A9781D41152FF92C00E8E887 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iBeauty.app/iBeauty";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iBeauty/iBeauty-Prefix.pch";
+				INFOPLIST_FILE = "iBeautyTests/iBeautyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A9781CF8152FF92B00E8E887 /* Build configuration list for PBXProject "iBeauty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9781D3A152FF92C00E8E887 /* Debug */,
+				A9781D3B152FF92C00E8E887 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9781D3C152FF92C00E8E887 /* Build configuration list for PBXNativeTarget "iBeauty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9781D3D152FF92C00E8E887 /* Debug */,
+				A9781D3E152FF92C00E8E887 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A9781D3F152FF92C00E8E887 /* Build configuration list for PBXNativeTarget "iBeautyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9781D40152FF92C00E8E887 /* Debug */,
+				A9781D41152FF92C00E8E887 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A9781CF5152FF92B00E8E887 /* Project object */;
+}
