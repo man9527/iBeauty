@@ -37,7 +37,7 @@
     //float y = statusBar.size.height + self.navigationController.navigationBar.bounds.size.height;
     
 	coverflow = [[TKCoverflowView alloc] initWithFrame:CGRectMake(0, 0, screenRect.size.width, height)];
-    coverflow.backgroundColor = [UIColor whiteColor];
+    coverflow.backgroundColor = [UIColor colorWithRed:255.0f/255.0f green:254.0f/255.0f blue:242.0/255.0f alpha:1.0];
 	coverflow.coverflowDelegate = self;
 	coverflow.dataSource = self;
     coverflow.coverSpacing = 50; 
@@ -117,7 +117,26 @@
     //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
     //                                              initWithCustomView:toolbar];
     
-    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:registerBtn, loginBtn, nil];
+    UIBarButtonItem *fixed1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    
+    UIBarButtonItem *fixed2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:registerBtn, loginBtn, fixed1, fixed2, nil];
+    
+    NSString *logo = [[NSBundle mainBundle] pathForResource:@"logo" ofType:@"png"];
+    
+    UIImage *logoImage = [UIImage imageWithContentsOfFile:logo];
+
+    UIImageView *logoView = [[UIImageView alloc] initWithImage:logoImage];
+    
+    CGRect frame = logoView.frame;
+    frame.origin.x = -70;
+    logoView.frame = frame;
+    
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
+    [titleView addSubview:logoView];
+    
+    self.navigationItem.titleView = titleView;
 }
 
 

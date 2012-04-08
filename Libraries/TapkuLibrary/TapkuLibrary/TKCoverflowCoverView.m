@@ -93,6 +93,14 @@
 	imageView.image = image;
 		
     self.frame = imageView.frame;
+    
+    [imageView.layer setBorderColor: [[UIColor whiteColor] CGColor]];
+    [imageView.layer setBorderWidth: 6.0];
+    //[imageView setContentMode:UIViewContentModeCenter];
+    [imageView.layer setShadowOffset:CGSizeMake(1.0, 1.0)];
+    [imageView.layer setShadowRadius:2.0];
+    [imageView.layer setShadowOpacity:1.0];
+    
 	gradientLayer.frame = CGRectMake(0, y + h, w, h);
 	
 	reflected.frame = CGRectMake(0, y + h, w, h);

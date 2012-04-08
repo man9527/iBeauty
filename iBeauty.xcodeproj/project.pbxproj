@@ -35,6 +35,10 @@
 		A9C77DB2153020DF0097F4B4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C77DB1153020DF0097F4B4 /* MainStoryboard.storyboard */; };
 		A9C77DB4153020F10097F4B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9C77DB3153020F10097F4B4 /* InfoPlist.strings */; };
 		A9C77DB7153021880097F4B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9C77DB9153021880097F4B4 /* Localizable.strings */; };
+		A9E648AD1531ECA100CD3DA7 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E648A91531ECA100CD3DA7 /* logo.png */; };
+		A9E648AE1531ECA100CD3DA7 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E648AB1531ECA100CD3DA7 /* logo@2x.png */; };
+		A9E648B11531ECAD00CD3DA7 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E648A91531ECA100CD3DA7 /* logo.png */; };
+		A9E648B21531ECAD00CD3DA7 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E648AB1531ECA100CD3DA7 /* logo@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +111,10 @@
 		A9C77DB3153020F10097F4B4 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		A9C77DB8153021880097F4B4 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A9C77DBA153021A80097F4B4 /* zh-Hant */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A9E648AA1531ECA100CD3DA7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hant"; path = "zh-Hant.lproj/logo.png"; sourceTree = "<group>"; };
+		A9E648AC1531ECA100CD3DA7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hant"; path = "zh-Hant.lproj/logo@2x.png"; sourceTree = "<group>"; };
+		A9E648AF1531ECAD00CD3DA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/logo.png; sourceTree = "<group>"; };
+		A9E648B01531ECAD00CD3DA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/logo@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +180,7 @@
 		A9781D08152FF92C00E8E887 /* iBeauty */ = {
 			isa = PBXGroup;
 			children = (
+				A9E648A81531EC9100CD3DA7 /* images */,
 				A9A3B213153192BD00B5BD70 /* photo02.jpg */,
 				A9A3B21115318A6300B5BD70 /* photo01.jpg */,
 				A9781D11152FF92C00E8E887 /* AppDelegate.h */,
@@ -234,6 +243,15 @@
 				A9A3B2071531855A00B5BD70 /* LogicTests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A9E648A81531EC9100CD3DA7 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				A9E648A91531ECA100CD3DA7 /* logo.png */,
+				A9E648AB1531ECA100CD3DA7 /* logo@2x.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +361,10 @@
 				A9A3B210153187F900B5BD70 /* TapkuLibrary.bundle in Resources */,
 				A9A3B21215318A6300B5BD70 /* photo01.jpg in Resources */,
 				A9A3B214153192BD00B5BD70 /* photo02.jpg in Resources */,
+				A9E648AD1531ECA100CD3DA7 /* logo.png in Resources */,
+				A9E648AE1531ECA100CD3DA7 /* logo@2x.png in Resources */,
+				A9E648B11531ECAD00CD3DA7 /* logo.png in Resources */,
+				A9E648B21531ECAD00CD3DA7 /* logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +449,24 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 			usesTabs = 0;
+		};
+		A9E648A91531ECA100CD3DA7 /* logo.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9E648AA1531ECA100CD3DA7 /* zh-Hant */,
+				A9E648AF1531ECAD00CD3DA7 /* en */,
+			);
+			name = logo.png;
+			sourceTree = "<group>";
+		};
+		A9E648AB1531ECA100CD3DA7 /* logo@2x.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9E648AC1531ECA100CD3DA7 /* zh-Hant */,
+				A9E648B01531ECAD00CD3DA7 /* en */,
+			);
+			name = "logo@2x.png";
+			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 

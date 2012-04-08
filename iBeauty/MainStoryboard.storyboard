@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
-        <deployment defaultVersion="1280" identifier="iOS"/>
+        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller - 分享-->
         <scene sceneID="sRD-sR-f81">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pp6-0t-9CK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -25,6 +26,7 @@
             </objects>
             <point key="canvasLocation" x="293" y="-896"/>
         </scene>
+        <!--First View Controller - F-->
         <scene sceneID="11">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
@@ -56,6 +58,7 @@
             </objects>
             <point key="canvasLocation" x="667" y="-896"/>
         </scene>
+        <!--Third View Controller - 穿搭-->
         <scene sceneID="G27-lN-Weq">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vns-PG-a7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -80,6 +83,7 @@
             </objects>
             <point key="canvasLocation" x="690" y="417"/>
         </scene>
+        <!--Navigation Controller - 達人-->
         <scene sceneID="9iz-b0-XGr">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Opd-Ju-b3V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -95,6 +99,7 @@
             </objects>
             <point key="canvasLocation" x="293" y="-205"/>
         </scene>
+        <!--Navigation Controller - 穿搭-->
         <scene sceneID="7bW-z8-l7F">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wFJ-BT-Y1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -110,6 +115,7 @@
             </objects>
             <point key="canvasLocation" x="293" y="417"/>
         </scene>
+        <!--Second View Controller - Second-->
         <scene sceneID="13">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
@@ -133,7 +139,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="達人" image="second" id="6"/>
                     <navigationItem key="navigationItem" id="Pw3-MG-cw8"/>
@@ -141,6 +147,7 @@
             </objects>
             <point key="canvasLocation" x="690" y="-205"/>
         </scene>
+        <!--Tab Bar Controller-->
         <scene sceneID="15">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
@@ -167,20 +174,6 @@
         <image name="first" width="16" height="16"/>
         <image name="second" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="BaseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseViewController.h"/>
-        </class>
-        <class className="FirstViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
-        </class>
-        <class className="SecondViewController" superclassName="BaseViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
-        </class>
-        <class className="ThirdViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ThirdViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
