@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
+#import <TapkuLibrary/TapkuLibrary.h>
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : BaseViewController  <TKCoverflowViewDelegate, TKCoverflowViewDataSource> {
+    
+    // The coverflow view
+	TKCoverflowView *coverflow; 
+    
+	// Covers images
+	NSMutableArray *covers; 
+}
+
+@property (retain,nonatomic) TKCoverflowView *coverflow;
+
 
 @end

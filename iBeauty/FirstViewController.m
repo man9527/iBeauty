@@ -17,12 +17,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:218.0f/255.0f green:76.0f/255.0f blue:88.0/255.0f alpha:1.0];
-    
-    NSLog(NSLocalizedString(@"test1", nil));
-    NSLog([[NSLocale preferredLanguages] objectAtIndex:0]);
+
+//    NSLog(NSLocalizedString(@"test1", nil));
+//    NSLog([[NSLocale preferredLanguages] objectAtIndex:0]);
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)initTopBarTitle {
+    
+}
+
+-(NSString*) barItemTitle {
+    return NSLocalizedString(@"tabitem_camera_txt", nil);
 }
 
 - (void)viewDidUnload

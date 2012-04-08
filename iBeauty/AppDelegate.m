@@ -15,6 +15,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    UITabBarController* root = (UITabBarController*)self.window.rootViewController;
+    root.selectedIndex = 1;
     return YES;
 }
 							

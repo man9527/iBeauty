@@ -73,15 +73,26 @@
 	
 	float w = image.size.width;
 	float h = image.size.height;
-	float factor = self.bounds.size.width / (h>w?h:w);
+	//float factor = self.bounds.size.width / (h>w?h:w);
+    float factor = self.bounds.size.width / w;
 	h = factor * h;
 	w = factor * w;
-	float y = baseline - h > 0 ? baseline - h : 0;
 	
+    float y = baseline - h > 0 ? baseline - h : 0;
+	
+//    float topMargin = self.bounds.size.height - h - baseline;
+//    
+//    if (topMargin > 0) {
+//        y+=topMargin;
+//    }
+//
+//    float height = self.bounds.size.height;
+//    float y =  self.bounds.size.height - h;
+    NSLog(@"reposite y:%f", y);
 	imageView.frame = CGRectMake(0, y, w, h);
 	imageView.image = image;
-	
-	
+		
+    self.frame = imageView.frame;
 	gradientLayer.frame = CGRectMake(0, y + h, w, h);
 	
 	reflected.frame = CGRectMake(0, y + h, w, h);
