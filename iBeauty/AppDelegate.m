@@ -14,6 +14,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    TTNavigator* navigator = [TTNavigator navigator];
+    navigator.persistenceMode = TTNavigatorPersistenceModeAll;
+    navigator.window = [[UIWindow alloc] initWithFrame:TTScreenBounds()];
+    
+    TTURLMap* map = navigator.URLMap;
+    
     // Override point for customization after application launch.
     UITabBarController* root = (UITabBarController*)self.window.rootViewController;
     root.selectedIndex = 1;

@@ -6,8 +6,8 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Three20/Three20.h>
 
-@interface ThirdViewController : UIViewController
+@interface ThirdViewController : TTPhotoViewController
 
 @end

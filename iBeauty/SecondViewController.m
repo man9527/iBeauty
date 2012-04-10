@@ -7,6 +7,7 @@
 //
 
 #import "SecondViewController.h"
+#import "SelectedPhotoViewController.h"
 
 @interface SecondViewController ()
 
@@ -69,14 +70,17 @@
 }
 - (void) coverflowView:(TKCoverflowView*)coverflowView coverAtIndexWasDoubleTapped:(int)index{
 	
-	
 	TKCoverflowCoverView *cover = [coverflowView coverAtIndex:index];
 	if(cover == nil) return;
-	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:1];
-	[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:cover cache:YES];
-	[UIView commitAnimations];
-	
+
+	SelectedPhotoViewController* s = [[SelectedPhotoViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:s animated:YES];
+    
+//    [UIView beginAnimations:nil context:nil];
+//	[UIView setAnimationDuration:1];
+//	[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:cover cache:YES];
+//	[UIView commitAnimations];
+//	
     //	NSLog(@"Index: %d",index);
 }
 
