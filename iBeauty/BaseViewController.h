@@ -12,5 +12,5 @@
 @interface BaseViewController : UIViewController
 
 -(void)initTopBarTitle;
--(NSString*)barItemTitle;
+
 @end

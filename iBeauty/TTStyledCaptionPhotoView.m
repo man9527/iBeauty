@@ -216,12 +216,17 @@
     
     // if (_captionLabel.text.length) {
     if (_captionLabel.text.length) {
-        CGSize captionSize = _label1.frame.size;
+        //CGSize captionSize = _label1.frame.size;
+        CGSize captionSize = [_label1 sizeThatFits:CGSizeMake(textWidth, 0)];
         
+        NSLog(@"caption: %f", screenBounds.size.height/2 - (captionSize.height + marginBottom) );
+        NSLog(@"caption: %f", floor(screenBounds.size.height/2 - (captionSize.height + marginBottom)) );
         _captionLabel.frame = CGRectMake(marginLeft + (cx - screenBounds.size.width/2),
-                                         cy + floor(screenBounds.size.height/2
-                                                    - (captionSize.height + marginBottom)),
+                                         cy + floor(screenBounds.size.height/2 - (captionSize.height + marginBottom))-32,
                                          textWidth, captionSize.height);
+        
+        CGRect tt = _captionLabel.frame;
+        
         _label1.frame = CGRectMake(_captionLabel.frame.origin.x, _captionLabel.frame.origin.y,_label1.frame.size.width, _label1.frame.size.height);
     } else {
         _captionLabel.frame = CGRectZero;
@@ -247,8 +252,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setPhoto:(id<TTPhoto>)photo {
     if (!photo || photo != _photo) {
-        //[_photo release];
-        //_photo = [photo retain];
+        _photo = nil;
+        _photo = photo;
         _photoVersion = TTPhotoVersionNone;
         
         self.urlPath = nil;

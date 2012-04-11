@@ -17,17 +17,10 @@
     self.navigationController.navigationBar.tintColor = BASE_COLOR;
     
     [self initTopBarTitle];
-    
-    
-    self.tabBarItem.title = [self barItemTitle];
 }
 
 - (void)initTopBarTitle {
     // leave for children
-}
-
-- (NSString*)barItemTitle {
-    return @"Default";
 }
 
 @end

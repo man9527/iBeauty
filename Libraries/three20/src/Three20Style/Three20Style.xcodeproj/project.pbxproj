@@ -13,7 +13,7 @@
 		6E64640C1187F5EC00F08CB1 /* TTStyledButtonNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E64640A1187F5EC00F08CB1 /* TTStyledButtonNode.m */; };
 		6E64640D1187F5EC00F08CB1 /* TTStyledLinkNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E64640B1187F5EC00F08CB1 /* TTStyledLinkNode.m */; };
 		6E850F0911B0FE200071A4FD /* TTDefaultStyleSheet+DragRefreshHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E850F0711B0FE200071A4FD /* TTDefaultStyleSheet+DragRefreshHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6EE736C811849FAB00A35176 /* libThree20Core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE7366C11849C5800A35176 /* libThree20Core.a */; };
+		6EE736C811849FAB00A35176 /* lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE7366C11849C5800A35176 /* lib.a */; };
 		6EE737441184A38F00A35176 /* TTBevelBorderStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EE737031184A38F00A35176 /* TTBevelBorderStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6EE737451184A38F00A35176 /* TTBlendStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EE737041184A38F00A35176 /* TTBlendStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6EE737461184A38F00A35176 /* TTBoxStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EE737051184A38F00A35176 /* TTBoxStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -131,7 +131,7 @@
 		6EE737FE1184A39B00A35176 /* UIColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE737C01184A39B00A35176 /* UIColorAdditions.m */; };
 		6EE737FF1184A39B00A35176 /* UIFontAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE737C11184A39B00A35176 /* UIFontAdditions.m */; };
 		6EE738001184A39B00A35176 /* UIImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE737C21184A39B00A35176 /* UIImageAdditions.m */; };
-		6EE738A61184ADB800A35176 /* libThree20Network.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE738A31184ADB400A35176 /* libThree20Network.a */; };
+		6EE738A61184ADB800A35176 /* lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE738A31184ADB400A35176 /* lib.a */; };
 		6EE738C21184AE4A00A35176 /* Three20Style.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EE738C11184AE4A00A35176 /* Three20Style.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6EE7399A1184B9CE00A35176 /* StyleAdditionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE739981184B9CE00A35176 /* StyleAdditionTests.m */; };
 		6EE7399B1184B9CE00A35176 /* StyleGlobalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE739991184B9CE00A35176 /* StyleGlobalTests.m */; };
@@ -354,8 +354,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EE736C811849FAB00A35176 /* libThree20Core.a in Frameworks */,
-				6EE738A61184ADB800A35176 /* libThree20Network.a in Frameworks */,
+				6EE736C811849FAB00A35176 /* lib.a in Frameworks */,
+				6EE738A61184ADB800A35176 /* lib.a in Frameworks */,
 				6EE739D01184BB0400A35176 /* libThree20Style.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,7 +427,7 @@
 		6EE7366711849C5800A35176 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6EE7366C11849C5800A35176 /* libThree20Core.a */,
+				6EE7366C11849C5800A35176 /* lib.a */,
 				6EE7366E11849C5800A35176 /* CoreUnitTests.octest */,
 			);
 			name = Products;
@@ -725,7 +725,7 @@
 		6EE7389E1184ADB400A35176 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6EE738A31184ADB400A35176 /* libThree20Network.a */,
+				6EE738A31184ADB400A35176 /* lib.a */,
 				6EE738A51184ADB400A35176 /* NetworkUnitTests.octest */,
 			);
 			name = Products;
@@ -891,10 +891,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		6EE7366C11849C5800A35176 /* libThree20Core.a */ = {
+		6EE7366C11849C5800A35176 /* lib.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libThree20Core.a;
+			path = lib.a;
 			remoteRef = 6EE7366B11849C5800A35176 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -905,10 +905,10 @@
 			remoteRef = 6EE7366D11849C5800A35176 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		6EE738A31184ADB400A35176 /* libThree20Network.a */ = {
+		6EE738A31184ADB400A35176 /* lib.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libThree20Network.a;
+			path = lib.a;
 			remoteRef = 6EE738A21184ADB400A35176 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};

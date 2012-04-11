@@ -56,6 +56,7 @@ static const NSTimeInterval kPhotoLoadShortDelay  = 0.25;
 static const NSTimeInterval kSlideshowInterval    = 2;
 static const NSInteger kActivityLabelTag          = 96;
 
+#define BASE_COLOR [UIColor colorWithRed:218.0f/255.0f green:76.0f/255.0f blue:88.0/255.0f alpha:0.3]
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -82,10 +83,13 @@ static const NSInteger kActivityLabelTag          = 96;
         target: nil
         action: nil] autorelease];
 
-    self.statusBarStyle = UIStatusBarStyleBlackTranslucent;
+    //self.statusBarStyle = UIStatusBarStyleBlackTranslucent;
     self.navigationBarStyle = UIBarStyleBlackTranslucent;
-    self.navigationBarTintColor = nil;
-    self.wantsFullScreenLayout = YES;
+//    self.navigationBarTintColor = nil;
+//    self.navigationController.navigationBar.tintColor = BASE_COLOR;
+//    self.navigationController.navigationBar.translucent = YES;
+//    self.navigationController.navigationBar.alpha = 0.5f;
+    self.navigationBarTintColor = BASE_COLOR;
     self.hidesBottomBarWhenPushed = YES;
 
     self.defaultImage = TTIMAGE(@"bundle://Three20.bundle/images/photoDefault.png");
@@ -272,6 +276,7 @@ static const NSInteger kActivityLabelTag          = 96;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)showPhoto:(id<TTPhoto>)photo inView:(TTPhotoView*)photoView {
   photoView.photo = photo;
+    NSLog(@"photo url:%@",[photo URLValue]);
   if (!photoView.photo && _statusText) {
     [photoView showStatus:_statusText];
   }
@@ -536,17 +541,18 @@ static const NSInteger kActivityLabelTag          = 96;
   _toolbar = [[UIToolbar alloc] initWithFrame:
               CGRectMake(0, screenFrame.size.height - TT_ROW_HEIGHT,
                          screenFrame.size.width, TT_ROW_HEIGHT)];
+
   if (self.navigationBarStyle == UIBarStyleDefault) {
     _toolbar.tintColor = TTSTYLEVAR(toolbarTintColor);
   }
 
   _toolbar.barStyle = self.navigationBarStyle;
+  //_toolbar.tintColor = self.navigationBarTintColor;
   _toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin;
   _toolbar.items = [NSArray arrayWithObjects:
                     space, _previousButton, space, _nextButton, space, nil];
   [_innerView addSubview:_toolbar];
 }
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)viewDidUnload {
@@ -849,12 +855,12 @@ static const NSInteger kActivityLabelTag          = 96;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)scrollView:(TTScrollView*)scrollView tapped:(UITouch*)touch {
-  if ([self isShowingChrome]) {
-    [self showBars:NO animated:YES];
-
-  } else {
-    [self showBars:YES animated:NO];
-  }
+//  if ([self isShowingChrome]) {
+//    [self showBars:NO animated:YES];
+//
+//  } else {
+//    [self showBars:YES animated:NO];
+//  }
 }
 
 

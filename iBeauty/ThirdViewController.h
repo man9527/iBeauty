@@ -7,7 +7,8 @@
 //
 
 #import <Three20/Three20.h>
+#import "BaseViewController.h"
 
-@interface ThirdViewController : TTPhotoViewController
+@interface ThirdViewController : BaseViewController
 
 @end

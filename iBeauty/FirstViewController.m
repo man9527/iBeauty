@@ -14,21 +14,23 @@
 
 @implementation FirstViewController
  
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.title = NSLocalizedString(@"tabitem_camera_txt", nil);
+        self.tabBarItem.image = [UIImage imageNamed:@"first"];
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-//    NSLog(NSLocalizedString(@"test1", nil));
-//    NSLog([[NSLocale preferredLanguages] objectAtIndex:0]);
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)initTopBarTitle {
     
-}
-
--(NSString*) barItemTitle {
-    return NSLocalizedString(@"tabitem_camera_txt", nil);
 }
 
 - (void)viewDidUnload

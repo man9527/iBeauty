@@ -171,11 +171,11 @@
 		
         // r.origin.y = currentSize.height / 2 - (coverSize.height/2) - (coverSize.height/16);
         // r.origin.y = cover.baseline;
-        NSLog(@"%f", r.origin.y);
-        NSLog(@"%f, %f, %f, %f", self.bounds.size.height, cover.baseline, cover.bounds.size.height, self.bounds.size.height-cover.baseline-cover.bounds.size.height);
+        //NSLog(@"%f", r.origin.y);
+        //NSLog(@"%f, %f, %f, %f", self.bounds.size.height, cover.baseline, cover.bounds.size.height, self.bounds.size.height-cover.baseline-cover.bounds.size.height);
         
         float y = self.bounds.size.height - cover.baseline - cover.bounds.size.height;
-        NSLog(@"%f", y);
+        //NSLog(@"%f", y);
         r.origin.y = y;
         
 		r.origin.x = (currentSize.width/2 - (coverSize.width/ 2)) + (coverSpacing) * cnt;

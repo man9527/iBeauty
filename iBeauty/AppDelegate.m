@@ -7,10 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "FirstViewController.h"
+#import "SecondViewController.h"
+#import "ThirdViewController.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize tabBarController = _tabBarController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -20,6 +24,23 @@
     
     TTURLMap* map = navigator.URLMap;
     
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    UIViewController *viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController" bundle:nil];
+    UIViewController *viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
+    UIViewController *viewController3 = [[ThirdViewController alloc] initWithNibName:@"ThirdViewController" bundle:nil];
+    
+    UINavigationController *navController1 = [[UINavigationController alloc] initWithRootViewController:viewController1];
+    UINavigationController *navController2 = [[UINavigationController alloc] initWithRootViewController:viewController2];
+    UINavigationController *navController3 = [[UINavigationController alloc] initWithRootViewController:viewController3];
+    
+    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:navController1, navController2, navController3, nil];
+    
+    self.tabBarController.tabBar.tintColor = [UIColor redColor];
+    self.window.rootViewController = self.tabBarController;
+    [self.window makeKeyAndVisible];
+
     // Override point for customization after application launch.
     UITabBarController* root = (UITabBarController*)self.window.rootViewController;
     root.selectedIndex = 1;

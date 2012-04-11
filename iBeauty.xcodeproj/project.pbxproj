@@ -36,20 +36,19 @@
 		A9A3B1F61531638700B5BD70 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A3B1F51531638600B5BD70 /* BaseViewController.m */; };
 		A9A3B1F81531830700B5BD70 /* photo01.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A3B1F71531830700B5BD70 /* photo01.png */; };
 		A9A3B20B1531860700B5BD70 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A3B20A1531860700B5BD70 /* MapKit.framework */; };
-		A9A3B20D1531861100B5BD70 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A3B20C1531861100B5BD70 /* QuartzCore.framework */; };
 		A9A3B20E1531861600B5BD70 /* libTapkuLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A3B2051531855A00B5BD70 /* libTapkuLibrary.a */; };
 		A9A3B210153187F900B5BD70 /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A9A3B20F153187F900B5BD70 /* TapkuLibrary.bundle */; };
 		A9A3B21215318A6300B5BD70 /* photo01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9A3B21115318A6300B5BD70 /* photo01.jpg */; };
 		A9A3B214153192BD00B5BD70 /* photo02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9A3B213153192BD00B5BD70 /* photo02.jpg */; };
 		A9A3B27215332D7900B5BD70 /* TTStyledCaptionPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A3B27115332D7900B5BD70 /* TTStyledCaptionPhotoView.m */; };
 		A9A8A34915333365001DB596 /* MockPhotoSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A8A34815333365001DB596 /* MockPhotoSource.m */; };
-		A9C77DB2153020DF0097F4B4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C77DB1153020DF0097F4B4 /* MainStoryboard.storyboard */; };
 		A9C77DB4153020F10097F4B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9C77DB3153020F10097F4B4 /* InfoPlist.strings */; };
 		A9C77DB7153021880097F4B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9C77DB9153021880097F4B4 /* Localizable.strings */; };
+		A9CA382415347724006C07CF /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CA382315347724006C07CF /* FirstViewController.xib */; };
+		A9CA38261534777F006C07CF /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CA38251534777F006C07CF /* SecondViewController.xib */; };
+		A9CA3828153477A1006C07CF /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9CA3827153477A1006C07CF /* ThirdViewController.xib */; };
 		A9E648AD1531ECA100CD3DA7 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E648A91531ECA100CD3DA7 /* logo.png */; };
 		A9E648AE1531ECA100CD3DA7 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E648AB1531ECA100CD3DA7 /* logo@2x.png */; };
-		A9E648B11531ECAD00CD3DA7 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E648A91531ECA100CD3DA7 /* logo.png */; };
-		A9E648B21531ECAD00CD3DA7 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E648AB1531ECA100CD3DA7 /* logo@2x.png */; };
 		A9EDA879153336AE00D2493D /* SelectedPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EDA878153336AE00D2493D /* SelectedPhotoViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -279,10 +278,12 @@
 		A9A3B27115332D7900B5BD70 /* TTStyledCaptionPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTStyledCaptionPhotoView.m; sourceTree = "<group>"; };
 		A9A8A34715333365001DB596 /* MockPhotoSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockPhotoSource.h; sourceTree = "<group>"; };
 		A9A8A34815333365001DB596 /* MockPhotoSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockPhotoSource.m; sourceTree = "<group>"; };
-		A9C77DB1153020DF0097F4B4 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A9C77DB3153020F10097F4B4 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		A9C77DB8153021880097F4B4 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A9C77DBA153021A80097F4B4 /* zh-Hant */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A9CA382315347724006C07CF /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		A9CA38251534777F006C07CF /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
+		A9CA3827153477A1006C07CF /* ThirdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
 		A9E648AA1531ECA100CD3DA7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hant"; path = "zh-Hant.lproj/logo.png"; sourceTree = "<group>"; };
 		A9E648AC1531ECA100CD3DA7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hant"; path = "zh-Hant.lproj/logo@2x.png"; sourceTree = "<group>"; };
 		A9E648AF1531ECAD00CD3DA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/logo.png; sourceTree = "<group>"; };
@@ -305,7 +306,6 @@
 				320A5A189C235877202780D5 /* libThree20Network.a in Frameworks */,
 				320CC833B8AF0ACFD35E6225 /* libThree20Style.a in Frameworks */,
 				A9A3B20E1531861600B5BD70 /* libTapkuLibrary.a in Frameworks */,
-				A9A3B20D1531861100B5BD70 /* QuartzCore.framework in Frameworks */,
 				A9A3B20B1531860700B5BD70 /* MapKit.framework in Frameworks */,
 				A9781D03152FF92C00E8E887 /* UIKit.framework in Frameworks */,
 				A9781D05152FF92C00E8E887 /* Foundation.framework in Frameworks */,
@@ -374,8 +374,8 @@
 		320D7DCCE32703ACAB9A45E3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				320D7DCCE32703ACAB9A45E4 /* libThree20.a */,
-				A9A3B25C15332CA500B5BD70 /* Three20UnitTests.octest */,
+				320D7DCCE32703ACAB9A45E4 /* lib.a */,
+				A9A3B25C15332CA500B5BD70 /* .octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -434,26 +434,28 @@
 			isa = PBXGroup;
 			children = (
 				A9E648A81531EC9100CD3DA7 /* images */,
-				A9A3B213153192BD00B5BD70 /* photo02.jpg */,
+				A9781D09152FF92C00E8E887 /* Supporting Files */,
+				A9C77DB9153021880097F4B4 /* Localizable.strings */,
 				A9A3B21115318A6300B5BD70 /* photo01.jpg */,
+				A9A3B213153192BD00B5BD70 /* photo02.jpg */,
+				A9A3B1F71531830700B5BD70 /* photo01.png */,
 				A9781D11152FF92C00E8E887 /* AppDelegate.h */,
 				A9781D12152FF92C00E8E887 /* AppDelegate.m */,
-				A9C77DB1153020DF0097F4B4 /* MainStoryboard.storyboard */,
+				A9A3B1F41531638600B5BD70 /* BaseViewController.h */,
+				A9A3B1F51531638600B5BD70 /* BaseViewController.m */,
 				A9781D17152FF92C00E8E887 /* FirstViewController.h */,
 				A9781D18152FF92C00E8E887 /* FirstViewController.m */,
+				A9CA382315347724006C07CF /* FirstViewController.xib */,
 				A9781D1A152FF92C00E8E887 /* first.png */,
 				A9781D1C152FF92C00E8E887 /* first@2x.png */,
 				A9781D1E152FF92C00E8E887 /* SecondViewController.h */,
 				A9781D1F152FF92C00E8E887 /* SecondViewController.m */,
-				A9A3B1F71531830700B5BD70 /* photo01.png */,
-				A9781D21152FF92C00E8E887 /* second.png */,
-				A9781D23152FF92C00E8E887 /* second@2x.png */,
-				A9781D09152FF92C00E8E887 /* Supporting Files */,
+				A9CA38251534777F006C07CF /* SecondViewController.xib */,
 				A9781D42152FFA4A00E8E887 /* ThirdViewController.h */,
 				A9781D43152FFA4A00E8E887 /* ThirdViewController.m */,
-				A9C77DB9153021880097F4B4 /* Localizable.strings */,
-				A9A3B1F41531638600B5BD70 /* BaseViewController.h */,
-				A9A3B1F51531638600B5BD70 /* BaseViewController.m */,
+				A9CA3827153477A1006C07CF /* ThirdViewController.xib */,
+				A9781D21152FF92C00E8E887 /* second.png */,
+				A9781D23152FF92C00E8E887 /* second@2x.png */,
 				A9A3B27015332D7900B5BD70 /* TTStyledCaptionPhotoView.h */,
 				A9A3B27115332D7900B5BD70 /* TTStyledCaptionPhotoView.m */,
 				A9A8A34715333365001DB596 /* MockPhotoSource.h */,
@@ -659,7 +661,7 @@
 			remoteRef = 320CC833B8AF0ACFD35E6226 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		320D7DCCE32703ACAB9A45E4 /* libThree20.a */ = {
+		320D7DCCE32703ACAB9A45E4 /* lib.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libThree20.a;
@@ -687,9 +689,10 @@
 			remoteRef = A9A3B2061531855A00B5BD70 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		A9A3B25C15332CA500B5BD70 /* Three20UnitTests.octest */ = {
+		A9A3B25C15332CA500B5BD70 /* .octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
+			name = .octest;
 			path = Three20UnitTests.octest;
 			remoteRef = A9A3B25B15332CA500B5BD70 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -748,7 +751,6 @@
 				A9781D1D152FF92C00E8E887 /* first@2x.png in Resources */,
 				A9781D22152FF92C00E8E887 /* second.png in Resources */,
 				A9781D24152FF92C00E8E887 /* second@2x.png in Resources */,
-				A9C77DB2153020DF0097F4B4 /* MainStoryboard.storyboard in Resources */,
 				A9C77DB4153020F10097F4B4 /* InfoPlist.strings in Resources */,
 				A9C77DB7153021880097F4B4 /* Localizable.strings in Resources */,
 				A9A3B1F81531830700B5BD70 /* photo01.png in Resources */,
@@ -757,8 +759,9 @@
 				A9A3B214153192BD00B5BD70 /* photo02.jpg in Resources */,
 				A9E648AD1531ECA100CD3DA7 /* logo.png in Resources */,
 				A9E648AE1531ECA100CD3DA7 /* logo@2x.png in Resources */,
-				A9E648B11531ECAD00CD3DA7 /* logo.png in Resources */,
-				A9E648B21531ECAD00CD3DA7 /* logo@2x.png in Resources */,
+				A9CA382415347724006C07CF /* FirstViewController.xib in Resources */,
+				A9CA38261534777F006C07CF /* SecondViewController.xib in Resources */,
+				A9CA3828153477A1006C07CF /* ThirdViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,8 +931,9 @@
 					"$(BUILT_PRODUCTS_DIR)/../../three20",
 					Libraries/three20/Build/Products/three20,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = iBeauty;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -952,9 +956,10 @@
 					"$(BUILT_PRODUCTS_DIR)/../../three20",
 					Libraries/three20/Build/Products/three20,
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = iBeauty;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -971,7 +976,7 @@
 					"$(SRCROOT)/Libraries/TapkuLibrary/",
 				);
 				INFOPLIST_FILE = "iBeauty/iBeauty-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = (
 					"-objC",
 					"-all_load",
@@ -993,7 +998,7 @@
 					"$(SRCROOT)/Libraries/TapkuLibrary/",
 				);
 				INFOPLIST_FILE = "iBeauty/iBeauty-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = (
 					"-objC",
 					"-all_load",

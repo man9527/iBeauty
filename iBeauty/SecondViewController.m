@@ -17,6 +17,17 @@
 
 @synthesize coverflow;
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        self.title = NSLocalizedString(@"tabitem_expert_txt", nil);
+        self.tabBarItem.image = [UIImage imageNamed:@"second"];
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -73,6 +84,10 @@
 	TKCoverflowCoverView *cover = [coverflowView coverAtIndex:index];
 	if(cover == nil) return;
 
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle: NSLocalizedString(@"btn_back_txt", nil)  style: UIBarButtonItemStyleBordered target: nil action: nil];
+    
+    [[self navigationItem] setBackBarButtonItem: newBackButton];
+    
 	SelectedPhotoViewController* s = [[SelectedPhotoViewController alloc] initWithNibName:nil bundle:nil];
     [self.navigationController pushViewController:s animated:YES];
     
@@ -134,18 +149,22 @@
     UIImageView *logoView = [[UIImageView alloc] initWithImage:logoImage];
     
     CGRect frame = logoView.frame;
-    frame.origin.x = -70;
-    logoView.frame = frame;
     
+        
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
     [titleView addSubview:logoView];
     
     self.navigationItem.titleView = titleView;
-}
+    
+    float screenWidth = self.navigationController.navigationBar.bounds.size.width;
+    float titleViewWidth = self.navigationItem.titleView.frame.size.width;
+    
+    //    CGRect titleViewFrame = [self.navigationItem.titleView convertRect:self.navigationItem.titleView.frame fromView:self.navigationController.navigationBar.superview.superview];
+    
+    NSLog(@"title view potition %f, %f, %f", screenWidth, titleViewWidth, self.navigationItem.titleView.frame.origin.x);
+    frame.origin.x = - (screenWidth - titleViewWidth)/2 + 10;
+    logoView.frame = frame;
 
-
--(NSString*) barItemTitle {
-    return NSLocalizedString(@"tabitem_expert_txt", nil);
 }
 
 - (void)viewDidUnload

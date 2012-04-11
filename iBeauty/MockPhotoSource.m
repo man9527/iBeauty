@@ -25,9 +25,10 @@
         }
         
         [newPhotos addObjectsFromArray:_tempPhotos];
+        _tempPhotos = nil;
         //TT_RELEASE_SAFELY(_tempPhotos);
         
-        //[_photos release];
+        _photos = nil;
         _photos = newPhotos;
         
         for (int i = 0; i < _photos.count; ++i) {
@@ -53,7 +54,7 @@
         _photos = photos2 ? [photos mutableCopy] : [[NSMutableArray alloc] init];
         _tempPhotos = photos2 ? photos2 : photos;
         _fakeLoadTimer = nil;
-        
+        NSLog(@"photos:%d", _photos.count);
         for (int i = 0; i < _photos.count; ++i) {
             id<TTPhoto> photo = [_photos objectAtIndex:i];
             if ((NSNull*)photo != [NSNull null]) {
@@ -66,6 +67,7 @@
             [self performSelector:@selector(fakeLoadReady)];
         }
     }
+    
     return self;
 }
 
@@ -97,6 +99,7 @@
         [_delegates perform:@selector(modelDidStartLoad:) withObject:self];
         
         //TT_RELEASE_SAFELY(_photos);
+        _photos = nil;
         _fakeLoadTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self
                                                         selector:@selector(fakeLoadReady) userInfo:nil repeats:NO];
     }
@@ -135,13 +138,26 @@
     }
 }
 
+- (MockPhoto*)get:(NSInteger)photoIndex {
+    if (photoIndex < _photos.count) {
+        id photo = [_photos objectAtIndex:photoIndex];
+        if (photo == [NSNull null]) {
+            return nil;
+        } else {
+            return photo;
+        }
+    } else {
+        return nil;
+    }
+}
+
 @end
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 @implementation MockPhoto
 
-@synthesize photoSource = __photoSource, size = _size, index = _index, caption = _caption;
+@synthesize photoSource = _photoSource, size = _size, index = _index, caption = _caption, url = _URL;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // NSObject

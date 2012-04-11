@@ -9,25 +9,11 @@ typedef enum {
     MockPhotoSourceLoadError = 4,
 } MockPhotoSourceType;
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
-@interface MockPhotoSource : TTURLRequestModel <TTPhotoSource> {
-    MockPhotoSourceType _type;
-    NSString* _title;
-    NSMutableArray* _photos;
-    NSArray* _tempPhotos;
-    NSTimer* _fakeLoadTimer;
-}
-
-- (id)initWithType:(MockPhotoSourceType)type title:(NSString*)title
-            photos:(NSArray*)photos photos2:(NSArray*)photos2;
-
-@end
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 @interface MockPhoto : NSObject <TTPhoto> {
-    id<TTPhotoSource> _photoSource;
+    id<TTPhotoSource> __unsafe_unretained _photoSource;
     NSString* _thumbURL;
     NSString* _smallURL;
     NSString* _URL;
@@ -41,4 +27,23 @@ typedef enum {
 - (id)initWithURL:(NSString*)URL smallURL:(NSString*)smallURL size:(CGSize)size
           caption:(NSString*)caption;
 
+@property (nonatomic) NSString* url;
+
+@end
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+@interface MockPhotoSource : TTURLRequestModel <TTPhotoSource> {
+    MockPhotoSourceType _type;
+    NSString* _title;
+    NSMutableArray* _photos;
+    NSArray* _tempPhotos;
+    NSTimer* _fakeLoadTimer;
+}
+
+- (id)initWithType:(MockPhotoSourceType)type title:(NSString*)title
+            photos:(NSArray*)photos photos2:(NSArray*)photos2;
+
+- (MockPhoto*)get:(NSInteger)photoIndex;
 @end
