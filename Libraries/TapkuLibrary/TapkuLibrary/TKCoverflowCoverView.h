@@ -41,8 +41,10 @@
 	CAGradientLayer *gradientLayer;
 }
 
-@property (strong,nonatomic) UIImage *image;
+// @property (strong,nonatomic) UIImage *image;
 @property (strong,nonatomic) CAGradientLayer *gradientLayer;
 @property (assign,nonatomic) float baseline; // set this property for displaying images w/ different heights
+
+- (void) setImage:(UIImage *)img withView:(UIImageView*)imgView;
 
 @end

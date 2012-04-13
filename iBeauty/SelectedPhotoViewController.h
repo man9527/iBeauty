@@ -10,4 +10,6 @@
 
 @interface SelectedPhotoViewController : TTPhotoViewController
 
+@property (strong,nonatomic) UIBarButtonItem* likeBtn;
+@property (strong,nonatomic) UIBarButtonItem* commentBtn;
 @end

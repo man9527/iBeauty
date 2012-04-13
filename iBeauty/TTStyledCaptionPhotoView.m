@@ -193,7 +193,7 @@
     CGFloat height = self.height;
     CGFloat cx = self.bounds.origin.x + width/2;
     CGFloat cy = self.bounds.origin.y + height/2;
-    CGFloat marginRight = 0.0f, marginLeft = 0.0f, marginBottom = TTToolbarHeight();
+    CGFloat marginRight = 0.0f, marginLeft = 0.0f, marginBottom = TTToolbarHeight(), marginTop = (screenBounds.size.height-height)/2;
     
     // Since the photo view is constrained to the size of the image, but we want to position
     // the status views relative to the screen, offset by the difference
@@ -214,18 +214,11 @@
         _statusLabel.frame = CGRectZero;
     }
     
-    // if (_captionLabel.text.length) {
     if (_captionLabel.text.length) {
-        //CGSize captionSize = _label1.frame.size;
-        CGSize captionSize = [_label1 sizeThatFits:CGSizeMake(textWidth, 0)];
-        
-        NSLog(@"caption: %f", screenBounds.size.height/2 - (captionSize.height + marginBottom) );
-        NSLog(@"caption: %f", floor(screenBounds.size.height/2 - (captionSize.height + marginBottom)) );
+        CGSize captionSize = _label1.frame.size;
         _captionLabel.frame = CGRectMake(marginLeft + (cx - screenBounds.size.width/2),
-                                         cy + floor(screenBounds.size.height/2 - (captionSize.height + marginBottom))-32,
+                                         cy + floor(screenBounds.size.height/2 - (captionSize.height + marginBottom))-marginTop,
                                          textWidth, captionSize.height);
-        
-        CGRect tt = _captionLabel.frame;
         
         _label1.frame = CGRectMake(_captionLabel.frame.origin.x, _captionLabel.frame.origin.y,_label1.frame.size.width, _label1.frame.size.height);
     } else {

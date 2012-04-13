@@ -34,8 +34,6 @@
 #import "TKGlobal.h"
 
 
-
-
 @implementation TKCoverflowCoverView
 @synthesize baseline,gradientLayer;
 
@@ -46,9 +44,6 @@
     self.opaque = NO;
     self.backgroundColor = [UIColor clearColor];
     self.layer.anchorPoint = CGPointMake(0.5, 0.5);
-    
-    imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.width)];
-    [self addSubview:imageView];
     
     reflected =  [[UIImageView alloc] initWithFrame:CGRectMake(0, self.frame.size.width, self.frame.size.width, self.frame.size.width)];
     reflected.transform = CGAffineTransformScale(reflected.transform, 1, -1);
@@ -67,8 +62,11 @@
 }
 
 
-- (void) setImage:(UIImage *)img{
+- (void) setImage:(UIImage *)img withView:(UIImageView*)imgView{
 	
+    imageView = imgView;
+    imageView.userInteractionEnabled = FALSE;
+        
 	UIImage *image = img;
 	
 	float w = image.size.width;
@@ -80,15 +78,6 @@
 	
     float y = baseline - h > 0 ? baseline - h : 0;
 	
-//    float topMargin = self.bounds.size.height - h - baseline;
-//    
-//    if (topMargin > 0) {
-//        y+=topMargin;
-//    }
-//
-//    float height = self.bounds.size.height;
-//    float y =  self.bounds.size.height - h;
-    NSLog(@"reposite y:%f", y);
 	imageView.frame = CGRectMake(0, y, w, h);
 	imageView.image = image;
 		
@@ -113,10 +102,5 @@
 	baseline = f;
 	[self setNeedsDisplay];
 }
-
-
-
-
-
 
 @end

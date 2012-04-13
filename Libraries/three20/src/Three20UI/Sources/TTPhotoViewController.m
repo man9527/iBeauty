@@ -547,7 +547,7 @@ static const NSInteger kActivityLabelTag          = 96;
   }
 
   _toolbar.barStyle = self.navigationBarStyle;
-  //_toolbar.tintColor = self.navigationBarTintColor;
+  _toolbar.tintColor = self.navigationBarTintColor;
   _toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin;
   _toolbar.items = [NSArray arrayWithObjects:
                     space, _previousButton, space, _nextButton, space, nil];

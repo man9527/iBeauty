@@ -31,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+   
 	// Setup the covers
 	covers = [NSArray arrayWithObjects:
 			   [UIImage imageNamed:@"photo01.jpg"],[UIImage imageNamed:@"photo02.jpg"],
@@ -74,7 +74,7 @@
 		cover.baseline = 50;
 	}   
     
-	cover.image = [covers objectAtIndex:index % [covers count]];
+	[cover setImage:[covers objectAtIndex:index % [covers count]] withView: (UIImageView*)[[TTImageView alloc] initWithFrame:CGRectMake(0, 0, cover.frame.size.width, cover.frame.size.width)]] ;
 	
 	return cover;
 	
