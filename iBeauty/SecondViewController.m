@@ -8,6 +8,8 @@
 
 #import "SecondViewController.h"
 #import "SelectedPhotoViewController.h"
+#import "Constants.h"
+#import "TTCoverFlowImageView.h"
 
 @interface SecondViewController ()
 
@@ -34,12 +36,12 @@
    
 	// Setup the covers
 	covers = [NSArray arrayWithObjects:
-			   [UIImage imageNamed:@"photo01.jpg"],[UIImage imageNamed:@"photo02.jpg"],
-			   [UIImage imageNamed:@"photo01.jpg"],[UIImage imageNamed:@"photo02.jpg"],
-			   [UIImage imageNamed:@"photo01.jpg"],[UIImage imageNamed:@"photo02.jpg"],
-			   [UIImage imageNamed:@"photo01.jpg"],[UIImage imageNamed:@"photo02.jpg"],
-			   [UIImage imageNamed:@"photo01.jpg"],nil];
-     
+			   @"http://img01.taobaocdn.com/imgextra/i1/381131249/T2JV5zXgpaXXXXXXXX_!!381131249.jpg",@"http://img01.taobaocdn.com/imgextra/i1/381131249/T29VSzXkhaXXXXXXXX_!!381131249.jpg",
+			   @"http://img04.taobaocdn.com/imgextra/i4/381131249/T2ap5zXhlaXXXXXXXX_!!381131249.jpg",@"http://img01.taobaocdn.com/imgextra/i1/381131249/T2bF5zXhhaXXXXXXXX_!!381131249.jpg",
+			   @"http://img03.taobaocdn.com/imgextra/i3/381131249/T28aezXbxaXXXXXXXX_!!381131249.jpg",@"http://img02.taobaocdn.com/imgextra/i2/381131249/T2wpSzXlhaXXXXXXXX_!!381131249.jpg",
+			   @"http://img01.taobaocdn.com/imgextra/i1/381131249/T29VSzXkhaXXXXXXXX_!!381131249.jpg",@"http://img01.taobaocdn.com/imgextra/i1/381131249/T29VSzXkhaXXXXXXXX_!!381131249.jpg",
+			   @"http://img01.taobaocdn.com/imgextra/i1/381131249/T2JV5zXgpaXXXXXXXX_!!381131249.jpg",nil];
+         
 	// Add the coverflow view
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -49,13 +51,13 @@
     //float y = statusBar.size.height + self.navigationController.navigationBar.bounds.size.height;
     
 	coverflow = [[TKCoverflowView alloc] initWithFrame:CGRectMake(0, 0, screenRect.size.width, height)];
-    coverflow.backgroundColor = [UIColor colorWithRed:255.0f/255.0f green:254.0f/255.0f blue:242.0/255.0f alpha:1.0];
+    coverflow.backgroundColor = BACKGROUND_COLOR;
 	coverflow.coverflowDelegate = self;
 	coverflow.dataSource = self;
     coverflow.coverSpacing = 50; 
     
 	[self.view addSubview:coverflow];
-	[coverflow setNumberOfCovers:50];
+	[coverflow setNumberOfCovers:9];
 }
  
 #pragma Coverflow delegate methods
@@ -71,11 +73,23 @@
 		// Change the covers size here
 		cover = [[TKCoverflowCoverView alloc] initWithFrame:CGRectMake(0, 0, 224, 224)]; // 224
         cover.backgroundColor = [UIColor clearColor];
-		cover.baseline = 50;
+		cover.baseline = 30;
+        
+        TTCoverFlowImageView* imgView = [[TTCoverFlowImageView alloc] initWithFrame:CGRectMake(0, 0, cover.frame.size.width, cover.frame.size.width)];
+        imgView.defaultImage = [UIImage imageNamed:@"photoDefault.png"];
+        
+        imgView.coverflowView = cover;
+        //imgView. = imgView.urlPath;
+        [cover setImageView:(UIImageView*)imgView];
 	}   
+
+    TTCoverFlowImageView* imgView = (TTCoverFlowImageView*)[cover getImageView];
+    imgView.urlPath = [covers objectAtIndex:index];
     
-	[cover setImage:[covers objectAtIndex:index % [covers count]] withView: (UIImageView*)[[TTImageView alloc] initWithFrame:CGRectMake(0, 0, cover.frame.size.width, cover.frame.size.width)]] ;
-	
+    if (imgView.isLoaded) {
+        [cover resetImage];
+    }
+    
 	return cover;
 	
 }
@@ -90,24 +104,10 @@
     
 	SelectedPhotoViewController* s = [[SelectedPhotoViewController alloc] initWithNibName:nil bundle:nil];
     [self.navigationController pushViewController:s animated:YES];
-    
-//    [UIView beginAnimations:nil context:nil];
-//	[UIView setAnimationDuration:1];
-//	[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:cover cache:YES];
-//	[UIView commitAnimations];
-//	
-    //	NSLog(@"Index: %d",index);
 }
 
 
 - (void)initTopBarTitle {
-    //UIToolbar* toolbar = [[UIToolbar alloc]
-    //                      initWithFrame:CGRectMake(0, 0, 105, 45)];
-    
-    //[toolbar setBarStyle: self.navigationController.navigationBar.barStyle];
-    
-    //toolbar.tintColor=self.navigationController.navigationBar.tintColor;
-    
     // create an array for the buttons
     NSMutableArray* buttons = [[NSMutableArray alloc] initWithCapacity:2];
     
@@ -116,7 +116,7 @@
                                  style:UIBarButtonItemStyleBordered
                                  target:self
                                  action:@selector(loginAction:)];
-    //registerBtn.style = UIBarButtonItemStyleBordered;
+
     [buttons addObject:loginBtn];
     
     // create a standard delete button with the trash icon
@@ -126,16 +126,8 @@
                                     target:self
                                     action:@selector(registerAction:)];
     
-    // registerBtn.style = UIBarButtonItemStyleBordered;
     [buttons addObject:registerBtn];
-    
-    // put the buttons in the toolbar and release them
-    //[toolbar setItems:buttons animated:NO];
-    
-    // place the toolbar into the navigation bar
-    //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
-    //                                              initWithCustomView:toolbar];
-    
+        
     UIBarButtonItem *fixed1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     
     UIBarButtonItem *fixed2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
@@ -159,9 +151,6 @@
     float screenWidth = self.navigationController.navigationBar.bounds.size.width;
     float titleViewWidth = self.navigationItem.titleView.frame.size.width;
     
-    //    CGRect titleViewFrame = [self.navigationItem.titleView convertRect:self.navigationItem.titleView.frame fromView:self.navigationController.navigationBar.superview.superview];
-    
-    NSLog(@"title view potition %f, %f, %f", screenWidth, titleViewWidth, self.navigationItem.titleView.frame.origin.x);
     frame.origin.x = - (screenWidth - titleViewWidth)/2 + 10;
     logoView.frame = frame;
 

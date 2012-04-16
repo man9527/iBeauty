@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#define BASE_COLOR [UIColor colorWithRed:218.0f/255.0f green:76.0f/255.0f blue:88.0/255.0f alpha:1.0]
 
 @interface BaseViewController : UIViewController
 

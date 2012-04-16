@@ -15,17 +15,19 @@
 //
 
 // UI
+
 #import "Three20UI/TTTableLinkedItemCell.h"
+#import "Three20UI/TTStyledTextLabel.h"
 
 @class TTImageView;
 
 @interface TTTableMessageItemCell : TTTableLinkedItemCell {
-  UILabel*      _titleLabel;
+  TTStyledTextLabel*      _titleLabel;
   UILabel*      _timestampLabel;
   TTImageView*  _imageView2;
 }
 
-@property (nonatomic, readonly, retain) UILabel*      titleLabel;
+@property (nonatomic, readonly, retain) TTStyledTextLabel*      titleLabel;
 @property (nonatomic, readonly)         UILabel*      captionLabel;
 @property (nonatomic, readonly, retain) UILabel*      timestampLabel;
 @property (nonatomic, readonly, retain) TTImageView*  imageView2;

@@ -56,8 +56,6 @@
     gradientLayer.frame = CGRectMake(0, self.frame.size.width, self.frame.size.width, self.frame.size.width);
     [self.layer addSublayer:gradientLayer];
     
-    
-    
     return self;
 }
 
@@ -85,7 +83,6 @@
     
     [imageView.layer setBorderColor: [[UIColor whiteColor] CGColor]];
     [imageView.layer setBorderWidth: 6.0];
-    //[imageView setContentMode:UIViewContentModeCenter];
     [imageView.layer setShadowOffset:CGSizeMake(1.0, 1.0)];
     [imageView.layer setShadowRadius:2.0];
     [imageView.layer setShadowOpacity:1.0];
@@ -95,6 +92,94 @@
 	reflected.frame = CGRectMake(0, y + h, w, h);
 	reflected.image = image;
 }
+- (UIImageView*) getImageView {
+    return imageView;
+}
+
+- (void) setImageView:(UIImageView*)imgView{
+	
+    imageView = imgView;
+    imageView.userInteractionEnabled = FALSE;
+    [self addSubview:imageView];
+
+    [self resetImage];
+//    UIImage *image = imageView.image;
+//    
+//    float w = image.size.width;
+//    float h = image.size.height;
+//    float factor = self.bounds.size.width / w;
+//    h = factor * h;
+//    w = factor * w;
+//	
+//    float y = baseline - h > 0 ? baseline - h : 0;
+//	
+//    imageView.frame = CGRectMake(0, y, w, h);
+//    //imageView.image = image;
+//    
+//    self.frame = imageView.frame;
+////    CGRect frame = self.frame;
+////    frame.origin.y = frame.origin.y - (h - frame.size.height);
+////    NSLog(@"new y %f", frame.origin.y);
+////    self.frame = frame;
+//    
+//    // border and shadow
+//    [imageView.layer setBorderColor: [[UIColor whiteColor] CGColor]];
+//    [imageView.layer setBorderWidth: 6.0];
+//    [imageView.layer setShadowOffset:CGSizeMake(1.0, 1.0)];
+//    [imageView.layer setShadowRadius:2.0];
+//    [imageView.layer setShadowOpacity:1.0];
+//    
+//    gradientLayer.frame = CGRectMake(0, y + h, w, h);
+//	
+//    reflected.frame = CGRectMake(0, y + h, w, h);
+//    reflected.image = image;
+}
+
+- (void)resetImage {
+    @synchronized(self) {
+    if (nil!=imageView) {
+        
+        UIImage *image = imageView.image;
+        
+        float w = image.size.width;
+        float h = image.size.height;
+        float factor = self.bounds.size.width / w;
+        h = factor * h;
+        w = factor * w;
+	
+//        float y = baseline - h > 0 ? baseline - h : 0;
+        CGRect frame = self.frame;
+        float y = 0 - (h-frame.size.height);
+        
+//        if (frame.origin.y + y < 0) {
+//            y = y - (frame.origin.y + y);
+//        }
+        
+        imageView.frame = CGRectMake(0, y, w, h);
+        //NSLog(@"second load %@", imageView.description);
+        //imageView.image = image;
+    
+        //self.frame = imageView.frame;
+        //CGRect frame = self.frame;
+        //frame.origin.y = frame.origin.y - (h - frame.size.height);
+        //NSLog(@"new y %f", frame.origin.y);
+        //self.frame = frame;
+        
+        // border and shadow
+        [imageView.layer setBorderColor: [[UIColor whiteColor] CGColor]];
+        [imageView.layer setBorderWidth: 6.0];
+        [imageView.layer setShadowOffset:CGSizeMake(1.0, 1.0)];
+        [imageView.layer setShadowRadius:2.0];
+        [imageView.layer setShadowOpacity:1.0];
+    
+        gradientLayer.frame = CGRectMake(0, y + h, w, h);
+	
+        reflected.frame = CGRectMake(0, y + h, w, h);
+        reflected.image = image;
+    }
+    }
+}
+
 - (UIImage*) image{
 	return imageView.image;
 }

@@ -46,5 +46,7 @@
 @property (assign,nonatomic) float baseline; // set this property for displaying images w/ different heights
 
 - (void) setImage:(UIImage *)img withView:(UIImageView*)imgView;
-
+- (void) setImageView:(UIImageView*)imgView;
+- (UIImageView*) getImageView;
+- (void) resetImage;
 @end

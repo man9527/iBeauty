@@ -6,7 +6,13 @@
 #import <Three20UI/UIViewAdditions.h>
 #import <Three20UINavigator/UIViewController+TTNavigator.h>
 
+
 #import "BaseViewController.h"
+#import "SelectedPhotoViewBarButtonViewController.h"
+
+#import "FirstViewController.h"
+#import "CommentController.h"
+#import "CommentListViewController.h"
 
 @interface TextTestStyleSheet2 : TTDefaultStyleSheet
 @end
@@ -44,8 +50,6 @@
 
 @implementation SelectedPhotoViewController
 
-@synthesize likeBtn = _likeBtn, commentBtn = _commentBtn;
-
 - (TTStyle*)myPhotoCaption {
     return
     [TTSolidFillStyle styleWithColor:[UIColor colorWithWhite:0 alpha:0.5] next:
@@ -65,7 +69,13 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        // set up caption style
         self.captionStyle = [self myPhotoCaption];
+        
+        btnViewController = [[SelectedPhotoViewBarButtonViewController alloc] initWithNibName:@"SelectedPhotoViewBarButtonViewController" bundle:nil];
+        btnViewController.view.frame = CGRectZero;
+        
+        _photoStatusView.userInteractionEnabled = NO;
     }
     
     return self;
@@ -83,7 +93,7 @@
     [TTStyleSheet setGlobalStyleSheet:[[TextTestStyleSheet2 alloc] init]];
     
     NSString* kText = @"\
-    <span class=\"normalText\"><a href='http://ddd'>This is a test of styled labels</a>.  <span class=\"tag\">Styled</span> labels support \
+    <span class=\"normalText\">http://www.google.com This is a test of styled labels.  <span class=\"tag\">Styled</span> labels support \
     <b>bold text</b>, <i>italic text</i>, <span class=\"blueText\">colored text</span>, \
     <span class=\"largeText\">font sizes</span></span>";
     
@@ -101,74 +111,87 @@
                          photos2:nil ];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    UIBarButtonItem *sharedBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(post)];
+    
+    self.navigationItem.rightBarButtonItem = sharedBtn;
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)loadView {
     [super loadView];
+
+    [self getBottomBarItem];
     
-    UIToolbar *tool = (UIToolbar*)[super rotatingFooterView];
+    UIToolbar* tool = (UIToolbar*)[super rotatingFooterView];
     
-    // create a standard delete button with the trash icon
-    _likeBtn = [self createLikeBtn:YES];
+    [likeBtn addTarget:self action:@selector(doLike) forControlEvents:UIControlEventTouchDown];
+
+    [commentBtn addTarget:self action:@selector(post) forControlEvents:UIControlEventTouchDown];
+
+    [numberBtn addTarget:self action:@selector(doShowComment) forControlEvents:UIControlEventTouchDown];
+
+    [self applyBottomBarText];
     
-    tool.items = [NSArray arrayWithObjects:
-                  _likeBtn, nil];    
-    
+    tool.items = [NSArray arrayWithObjects: [btnViewController likeBarButton], [btnViewController commentBarButton], [btnViewController numberBarButton], nil];        
 }
 
-- (UIBarButtonItem*) createLikeBtn:(BOOL)isOn {
+- (void)doLike {
+    NSLog(@"btn click");
+}
+
+- (void)doShowComment {
+    CommentListViewController *commentList = [[CommentListViewController alloc]init];
+    [self.navigationController pushViewController:commentList animated:YES];
+}
+
+- (void) getBottomBarItem {
+    likeBtn = btnViewController.likeBtn;
+    likeBtnView = btnViewController.likeBtnView;
+    CGRect f = likeBtnView.frame;
+    f.origin.x = 0; f.origin.y = 0;
+    likeBtnView.frame = f;
     
+    likeLabel = btnViewController.likeLabel;
+
+    commentBtn = btnViewController.commentBtn;
+    commentBtnView = btnViewController.commentBtnView;
+    commentLabel = btnViewController.commentLabel;
+    
+    numberBtn = btnViewController.numberBtn;
+    numberBtnView = btnViewController.numberBtnView;
+    likeNumberLabel = btnViewController.likeNumberLabel;
+    commentNumberLabel = btnViewController.commentNumberLabel;
+}
+
+- (void) applyBottomBarText {
+    BOOL isOn = YES;
     NSString* text = isOn?NSLocalizedString(@"btn_like_txt", nil):NSLocalizedString(@"btn_unlike_txt", nil);
-    UIImage *chatImage = [UIImage imageNamed:@"like_off.png"];
-    UIImageView *iview = [[UIImageView alloc] initWithImage:chatImage];
-    UILabel *l = [[UILabel alloc] init];
-    l.text = text;
+    likeLabel.text = text;
     
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 50)];
-    [view addSubview:iview];
-    [view addSubview:l];
+    commentLabel.text = NSLocalizedString(@"btn_comment_txt", nil);
     
-//    UIButton *chatButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [chatButton setBackgroundImage:chatImage forState:UIControlStateNormal];
-//    [chatButton setTitle:text forState:UIControlStateNormal];
-//    chatButton.frame = (CGRect) {
-//        .size.width = 100,
-//        .size.height = 30,
-//    };
+    NSInteger numberOfLike = 0, numberOfComment = 0;
+    likeNumberLabel.text = numberOfLike==0?@"":[NSString stringWithFormat:@"%d", numberOfLike];
+    commentNumberLabel.text = numberOfComment==0?@"":[NSString stringWithFormat:@"%d", numberOfComment];
 
-    
-//    TTButton *newsButton = [TTButton buttonWithStyle:@"redToolbarButton:"]; 
-//    [newsButton setTitle:NSLocalizedString(@"Новости",nil) forState:UIControlStateNormal]; 
-//    
-//    [newsButton addTarget:self action:@selector(newsButtonClick:) forControlEvents:UIControlEventTouchUpInside]; 
-//    newsButton.frame = CGRectMake(70, 80, 150, 50); 
-//    
-//    UIImageView *butImg2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"like_off.png"]]; 
-//    [newsButton addSubview:butImg2]; 
-//    [newsButton sizeToFit];
-//    
-//    TTButton* storyButton = [TTButton buttonWithStyle:@"toolbarRoundButton:" title:@"Open Full Story"];
-//    storyButton.font = [UIFont boldSystemFontOfSize:18];
-//    storyButton.frame = CGRectMake(100, 100, 200, 50);
-//    
-//    [storyButton addTarget:self action:@selector(presentFullStory) forControlEvents:UIControlEventTouchUpInside];
-//    [storyButton sizeToFit];
-    
-    UIBarButtonItem *b = [[UIBarButtonItem alloc] initWithCustomView:l];
-     b.target=@"tt://post";
-     b.action=@selector(openURLFromButton:);  
-    
-    b.title = text;
-    [l sizeToFit];
-    
-    return b;
 }
 
-- (UIViewController*)post:(NSDictionary*)query {
-    TTPostController* controller = [[TTPostController alloc] initWithNavigatorURL:nil query:
-                                     [NSDictionary dictionaryWithObjectsAndKeys:@"Default Text", @"text", nil]];
-                                    
-    controller.originView = [query objectForKey:@"__target__"];
-    return controller;
+- (void)scrollViewWillBeginDragging:(TTScrollView *)scrollView {
+    // disabled
+}
+
+- (void)post{
+    CommentController *viewToGo = [[CommentController alloc] init];
+	self.popupViewController = viewToGo;
+	viewToGo.superController = self;
+	viewToGo.delegate = self;
+	viewToGo.textView.text = @"";
+	viewToGo.title = NSLocalizedString(@"btn_comment_txt", nil);
+	
+	[viewToGo showInView:self.view animated:YES];
+	// [viewToGo release];
 }
 @end

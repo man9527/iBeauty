@@ -33,8 +33,23 @@
 		A9781D36152FF92C00E8E887 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9781D34152FF92C00E8E887 /* InfoPlist.strings */; };
 		A9781D39152FF92C00E8E887 /* iBeautyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A9781D38152FF92C00E8E887 /* iBeautyTests.m */; };
 		A9781D44152FFA4A00E8E887 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9781D43152FFA4A00E8E887 /* ThirdViewController.m */; };
-		A986082D15370FEF00D8E330 /* like_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = A986082C15370FEF00D8E330 /* like_btn.png */; };
-		A986082F1537106A00D8E330 /* like_off.png in Resources */ = {isa = PBXBuildFile; fileRef = A986082E1537106A00D8E330 /* like_off.png */; };
+		A986083215387FB700D8E330 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = A986083115387FB700D8E330 /* Constants.m */; };
+		A9860835153885FA00D8E330 /* photoDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = A9860833153885FA00D8E330 /* photoDefault.png */; };
+		A9860836153885FA00D8E330 /* photoDefault@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9860834153885FA00D8E330 /* photoDefault@2x.png */; };
+		A986083915388A7C00D8E330 /* TTCoverFlowImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A986083815388A7C00D8E330 /* TTCoverFlowImageView.m */; };
+		A98608431539D67200D8E330 /* word.png in Resources */ = {isa = PBXBuildFile; fileRef = A98608411539D67200D8E330 /* word.png */; };
+		A98608441539D67200D8E330 /* hand.png in Resources */ = {isa = PBXBuildFile; fileRef = A98608421539D67200D8E330 /* hand.png */; };
+		A98608461539E1E600D8E330 /* itemBG.png in Resources */ = {isa = PBXBuildFile; fileRef = A98608451539E1E500D8E330 /* itemBG.png */; };
+		A986084D1539E52D00D8E330 /* SelectedPhotoViewBarButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A986084B1539E52B00D8E330 /* SelectedPhotoViewBarButtonViewController.m */; };
+		A986084E1539E52D00D8E330 /* SelectedPhotoViewBarButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A986084C1539E52C00D8E330 /* SelectedPhotoViewBarButtonViewController.xib */; };
+		A9860855153B077E00D8E330 /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = A986084F153B077E00D8E330 /* comment.png */; };
+		A9860856153B077E00D8E330 /* like_btn_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A9860850153B077E00D8E330 /* like_btn_bg.png */; };
+		A9860857153B077E00D8E330 /* like_off.png in Resources */ = {isa = PBXBuildFile; fileRef = A9860851153B077E00D8E330 /* like_off.png */; };
+		A9860858153B077E00D8E330 /* like_btn_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9860852153B077E00D8E330 /* like_btn_bg@2x.png */; };
+		A9860859153B077E00D8E330 /* comment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9860853153B077E00D8E330 /* comment@2x.png */; };
+		A986085A153B077E00D8E330 /* like_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9860854153B077E00D8E330 /* like_off@2x.png */; };
+		A986089E153B444B00D8E330 /* CommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = A986089D153B444A00D8E330 /* CommentController.m */; };
+		A98608A2153C66E200D8E330 /* CommentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98608A0153C66E100D8E330 /* CommentListViewController.m */; };
 		A9A3B1F61531638700B5BD70 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A3B1F51531638600B5BD70 /* BaseViewController.m */; };
 		A9A3B1F81531830700B5BD70 /* photo01.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A3B1F71531830700B5BD70 /* photo01.png */; };
 		A9A3B20B1531860700B5BD70 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A3B20A1531860700B5BD70 /* MapKit.framework */; };
@@ -267,8 +282,28 @@
 		A9781D38152FF92C00E8E887 /* iBeautyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iBeautyTests.m; sourceTree = "<group>"; };
 		A9781D42152FFA4A00E8E887 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		A9781D43152FFA4A00E8E887 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
-		A986082C15370FEF00D8E330 /* like_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like_btn.png; sourceTree = "<group>"; };
-		A986082E1537106A00D8E330 /* like_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like_off.png; sourceTree = "<group>"; };
+		A986083015387FB700D8E330 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		A986083115387FB700D8E330 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		A9860833153885FA00D8E330 /* photoDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photoDefault.png; sourceTree = "<group>"; };
+		A9860834153885FA00D8E330 /* photoDefault@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photoDefault@2x.png"; sourceTree = "<group>"; };
+		A986083715388A7C00D8E330 /* TTCoverFlowImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTCoverFlowImageView.h; sourceTree = "<group>"; };
+		A986083815388A7C00D8E330 /* TTCoverFlowImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTCoverFlowImageView.m; sourceTree = "<group>"; };
+		A98608411539D67200D8E330 /* word.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = word.png; sourceTree = "<group>"; };
+		A98608421539D67200D8E330 /* hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hand.png; sourceTree = "<group>"; };
+		A98608451539E1E500D8E330 /* itemBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = itemBG.png; sourceTree = "<group>"; };
+		A986084A1539E52B00D8E330 /* SelectedPhotoViewBarButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedPhotoViewBarButtonViewController.h; sourceTree = "<group>"; };
+		A986084B1539E52B00D8E330 /* SelectedPhotoViewBarButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedPhotoViewBarButtonViewController.m; sourceTree = "<group>"; };
+		A986084C1539E52C00D8E330 /* SelectedPhotoViewBarButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectedPhotoViewBarButtonViewController.xib; sourceTree = "<group>"; };
+		A986084F153B077E00D8E330 /* comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = comment.png; path = images/comment.png; sourceTree = "<group>"; };
+		A9860850153B077E00D8E330 /* like_btn_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = like_btn_bg.png; path = images/like_btn_bg.png; sourceTree = "<group>"; };
+		A9860851153B077E00D8E330 /* like_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = like_off.png; path = images/like_off.png; sourceTree = "<group>"; };
+		A9860852153B077E00D8E330 /* like_btn_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "like_btn_bg@2x.png"; path = "images/like_btn_bg@2x.png"; sourceTree = "<group>"; };
+		A9860853153B077E00D8E330 /* comment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "comment@2x.png"; path = "images/comment@2x.png"; sourceTree = "<group>"; };
+		A9860854153B077E00D8E330 /* like_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "like_off@2x.png"; path = "images/like_off@2x.png"; sourceTree = "<group>"; };
+		A986089C153B444900D8E330 /* CommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentController.h; sourceTree = "<group>"; };
+		A986089D153B444A00D8E330 /* CommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentController.m; sourceTree = "<group>"; };
+		A986089F153C66E100D8E330 /* CommentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentListViewController.h; sourceTree = "<group>"; };
+		A98608A0153C66E100D8E330 /* CommentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentListViewController.m; sourceTree = "<group>"; };
 		A9A3B1F41531638600B5BD70 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		A9A3B1F51531638600B5BD70 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		A9A3B1F71531830700B5BD70 /* photo01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo01.png; sourceTree = "<group>"; };
@@ -464,8 +499,19 @@
 				A9A3B27115332D7900B5BD70 /* TTStyledCaptionPhotoView.m */,
 				A9A8A34715333365001DB596 /* MockPhotoSource.h */,
 				A9A8A34815333365001DB596 /* MockPhotoSource.m */,
+				A986083015387FB700D8E330 /* Constants.h */,
+				A986083115387FB700D8E330 /* Constants.m */,
+				A986083715388A7C00D8E330 /* TTCoverFlowImageView.h */,
+				A986083815388A7C00D8E330 /* TTCoverFlowImageView.m */,
 				A9EDA877153336AE00D2493D /* SelectedPhotoViewController.h */,
 				A9EDA878153336AE00D2493D /* SelectedPhotoViewController.m */,
+				A986084A1539E52B00D8E330 /* SelectedPhotoViewBarButtonViewController.h */,
+				A986084B1539E52B00D8E330 /* SelectedPhotoViewBarButtonViewController.m */,
+				A986084C1539E52C00D8E330 /* SelectedPhotoViewBarButtonViewController.xib */,
+				A986089C153B444900D8E330 /* CommentController.h */,
+				A986089D153B444A00D8E330 /* CommentController.m */,
+				A986089F153C66E100D8E330 /* CommentListViewController.h */,
+				A98608A0153C66E100D8E330 /* CommentListViewController.m */,
 			);
 			path = iBeauty;
 			sourceTree = "<group>";
@@ -514,8 +560,17 @@
 		A9E648A81531EC9100CD3DA7 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				A986082E1537106A00D8E330 /* like_off.png */,
-				A986082C15370FEF00D8E330 /* like_btn.png */,
+				A986084F153B077E00D8E330 /* comment.png */,
+				A9860850153B077E00D8E330 /* like_btn_bg.png */,
+				A9860851153B077E00D8E330 /* like_off.png */,
+				A9860852153B077E00D8E330 /* like_btn_bg@2x.png */,
+				A9860853153B077E00D8E330 /* comment@2x.png */,
+				A9860854153B077E00D8E330 /* like_off@2x.png */,
+				A98608451539E1E500D8E330 /* itemBG.png */,
+				A98608411539D67200D8E330 /* word.png */,
+				A98608421539D67200D8E330 /* hand.png */,
+				A9860833153885FA00D8E330 /* photoDefault.png */,
+				A9860834153885FA00D8E330 /* photoDefault@2x.png */,
 				A9E648A91531ECA100CD3DA7 /* logo.png */,
 				A9E648AB1531ECA100CD3DA7 /* logo@2x.png */,
 			);
@@ -768,8 +823,18 @@
 				A9CA382415347724006C07CF /* FirstViewController.xib in Resources */,
 				A9CA38261534777F006C07CF /* SecondViewController.xib in Resources */,
 				A9CA3828153477A1006C07CF /* ThirdViewController.xib in Resources */,
-				A986082D15370FEF00D8E330 /* like_btn.png in Resources */,
-				A986082F1537106A00D8E330 /* like_off.png in Resources */,
+				A9860835153885FA00D8E330 /* photoDefault.png in Resources */,
+				A9860836153885FA00D8E330 /* photoDefault@2x.png in Resources */,
+				A98608431539D67200D8E330 /* word.png in Resources */,
+				A98608441539D67200D8E330 /* hand.png in Resources */,
+				A98608461539E1E600D8E330 /* itemBG.png in Resources */,
+				A986084E1539E52D00D8E330 /* SelectedPhotoViewBarButtonViewController.xib in Resources */,
+				A9860855153B077E00D8E330 /* comment.png in Resources */,
+				A9860856153B077E00D8E330 /* like_btn_bg.png in Resources */,
+				A9860857153B077E00D8E330 /* like_off.png in Resources */,
+				A9860858153B077E00D8E330 /* like_btn_bg@2x.png in Resources */,
+				A9860859153B077E00D8E330 /* comment@2x.png in Resources */,
+				A986085A153B077E00D8E330 /* like_off@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -813,6 +878,11 @@
 				A9A3B27215332D7900B5BD70 /* TTStyledCaptionPhotoView.m in Sources */,
 				A9A8A34915333365001DB596 /* MockPhotoSource.m in Sources */,
 				A9EDA879153336AE00D2493D /* SelectedPhotoViewController.m in Sources */,
+				A986083215387FB700D8E330 /* Constants.m in Sources */,
+				A986083915388A7C00D8E330 /* TTCoverFlowImageView.m in Sources */,
+				A986084D1539E52D00D8E330 /* SelectedPhotoViewBarButtonViewController.m in Sources */,
+				A986089E153B444B00D8E330 /* CommentController.m in Sources */,
+				A98608A2153C66E200D8E330 /* CommentListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

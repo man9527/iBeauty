@@ -19,10 +19,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     TTNavigator* navigator = [TTNavigator navigator];
+    navigator.supportsShakeToReload = YES;
     navigator.persistenceMode = TTNavigatorPersistenceModeAll;
-    navigator.window = [[UIWindow alloc] initWithFrame:TTScreenBounds()];
     
     TTURLMap* map = navigator.URLMap;
+    [map from:@"*" toViewController:[TTWebController class]];    
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
@@ -37,7 +38,7 @@
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:navController1, navController2, navController3, nil];
     
-    self.tabBarController.tabBar.tintColor = [UIColor redColor];
+    // self.tabBarController.tabBar.tintColor = [UIColor redColor];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
 

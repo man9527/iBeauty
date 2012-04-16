@@ -30,6 +30,8 @@
 #import "Three20Core/TTCorePreprocessorMacros.h"
 #import "Three20Core/NSDateAdditions.h"
 
+#import "Three20Style/TTStyledText.h"
+
 static const NSInteger  kMessageTextLineCount       = 2;
 static const CGFloat    kDefaultMessageImageWidth   = 34.0f;
 static const CGFloat    kDefaultMessageImageHeight  = 34.0f;
@@ -125,8 +127,9 @@ static const CGFloat    kDefaultMessageImageHeight  = 34.0f;
   CGFloat width = self.contentView.width - left;
   CGFloat top = kTableCellSmallMargin;
 
-  if (_titleLabel.text.length) {
+  if (_titleLabel.text) {
     _titleLabel.frame = CGRectMake(left, top, width, _titleLabel.font.ttLineHeight);
+      [_titleLabel sizeToFit];
     top += _titleLabel.height;
 
   } else {
@@ -187,7 +190,7 @@ static const CGFloat    kDefaultMessageImageHeight  = 34.0f;
 
     TTTableMessageItem* item = object;
     if (item.title.length) {
-      self.titleLabel.text = item.title;
+      self.titleLabel.text = [TTStyledText textFromXHTML:item.title lineBreaks:YES URLs:YES];
     }
     if (item.caption.length) {
       self.captionLabel.text = item.caption;
@@ -212,9 +215,9 @@ static const CGFloat    kDefaultMessageImageHeight  = 34.0f;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (UILabel*)titleLabel {
+- (TTStyledTextLabel*)titleLabel {
   if (!_titleLabel) {
-    _titleLabel = [[UILabel alloc] init];
+    _titleLabel = [[TTStyledTextLabel alloc] init];
     _titleLabel.textColor = [UIColor blackColor];
     _titleLabel.highlightedTextColor = [UIColor whiteColor];
     _titleLabel.font = TTSTYLEVAR(tableFont);

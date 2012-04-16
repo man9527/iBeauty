@@ -7,9 +7,26 @@
 //
 
 #import <Three20/Three20.h>
+#import <Three20/Three20+Additions.h>
 
-@interface SelectedPhotoViewController : TTPhotoViewController
+#import "SelectedPhotoViewBarButtonViewController.h"
 
-@property (strong,nonatomic) UIBarButtonItem* likeBtn;
-@property (strong,nonatomic) UIBarButtonItem* commentBtn;
+@interface SelectedPhotoViewController : TTPhotoViewController  <TTPostControllerDelegate>  {
+    
+    SelectedPhotoViewBarButtonViewController *btnViewController;
+
+    IBOutlet UIButton * likeBtn;
+    IBOutlet UIButton * commentBtn;
+    IBOutlet UIButton * numberBtn;
+    
+    IBOutlet UIView * likeBtnView;
+    IBOutlet UIView * commentBtnView;    
+    IBOutlet UIView * numberBtnView;
+    
+    IBOutlet UILabel* likeLabel;
+    IBOutlet UILabel* commentLabel;
+    IBOutlet UILabel* likeNumberLabel;
+    IBOutlet UILabel* commentNumberLabel;
+}
+
 @end
