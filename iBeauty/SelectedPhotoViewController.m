@@ -13,18 +13,21 @@
 #import "FirstViewController.h"
 #import "CommentController.h"
 #import "CommentListViewController.h"
+#import "extThree20JSON/extThree20JSON.h"
+#import "SVProgressHUD.h"
+#import "ServiceClient.h"
+#import "Constants.h"
 
 @interface TextTestStyleSheet2 : TTDefaultStyleSheet
 @end
 
 @implementation TextTestStyleSheet2
-
 - (TTStyle*)blueText {
     return [TTTextStyle styleWithColor:[UIColor blueColor] next:nil];
 }
 
 - (TTStyle*)normalText {
-    return [TTTextStyle styleWithFont: TTSTYLEVAR(photoCaptionFont)
+    return [TTTextStyle styleWithFont: [UIFont boldSystemFontOfSize:14]
                                 color: TTSTYLEVAR(photoCaptionTextColor)
                       minimumFontSize: 0
                           shadowColor: TTSTYLEVAR(photoCaptionTextShadowColor)
@@ -44,11 +47,21 @@
        [TTSolidFillStyle styleWithColor:[UIColor cyanColor] next:
         [TTSolidBorderStyle styleWithColor:[UIColor grayColor] width:1 next:nil]]]]];
 }
-
 @end
 
 
 @implementation SelectedPhotoViewController
+
+- (id)initWithShareId:(NSInteger)_sharedId {
+    if (self = [super init]) {
+        shareId = _sharedId;
+        
+        [SVProgressHUD showWithStatus:NSLocalizedString(@"loading", nil)];
+        [[ServiceClient sharedInstance] getSingleShare:shareId delete:self];
+    }
+    
+    return self;
+}
 
 - (TTStyle*)myPhotoCaption {
     return
@@ -87,28 +100,45 @@
 }
 
 - (void)viewDidLoad {
-    [[TTNavigator navigator].URLMap from:@"tt://post"
-                        toViewController:self selector:@selector(post:)];
-    
     [TTStyleSheet setGlobalStyleSheet:[[TextTestStyleSheet2 alloc] init]];
+}
+
+- (void) setupPhotoView:(NSDictionary*)shareObj {
     
-    NSString* kText = @"\
-    <span class=\"normalText\">http://www.google.com This is a test of styled labels.  <span class=\"tag\">Styled</span> labels support \
-    <b>bold text</b>, <i>italic text</i>, <span class=\"blueText\">colored text</span>, \
-    <span class=\"largeText\">font sizes</span></span>";
+//    NSString* kText = @"\
+//    <span class=\"normalText\">http://www.google.com This is a test of styled labels.  <span class=\"tag\">Styled</span> labels support \
+//    <b>bold text</b>, <i>italic text</i>, <span class=\"blueText\">colored text</span>, \
+//    <span class=\"largeText\">font sizes</span></span>";
+
+    NSString *textTemplate = @"<span class='normalText'>%@<br><br>%@";
+    
+    NSString *tags = [self getTagsText:shareObj];
+    
+    NSString *kText = [NSString stringWithFormat:textTemplate, [shareObj objectForKey:@"text"], tags]; //    [shareObj objectForKey:@"text"];
+    NSLog(@"tags: %@", tags);
     
     self.photoSource = [[MockPhotoSource alloc]
-                         initWithType:MockPhotoSourceNormal
-                         title:nil
-                         photos:[NSArray arrayWithObjects:
-                                 // Request fails immediately due to DNS error
-                                 
-                                 [[MockPhoto alloc]
-                                   initWithURL:@"http://localhost:8080/demo/photo01.png"
-                                   smallURL:@"http://localhost:8080/demo/photo01.png"
-                                   size:CGSizeMake(320, 480)
-                                   caption:kText], nil]
-                         photos2:nil ];
+                        initWithType:MockPhotoSourceNormal
+                        title:nil
+                        photos:[NSArray arrayWithObjects:
+                            [[MockPhoto alloc]
+                                 initWithURL:[shareObj objectForKey:@"picture_url"]
+                                 smallURL:[shareObj objectForKey:@"picture_url"]
+                                 size:CGSizeMake(320, 480)
+                                 caption:kText], nil]
+                        photos2:nil ];
+}
+
+- (NSString*) getTagsText:(NSDictionary*) shareObj {
+    NSMutableString *tagString = [[NSMutableString alloc] init];
+
+    NSArray* tag = [shareObj objectForKey:@"tag"];
+    
+    for(NSString* s in tag) {
+        [tagString appendFormat:[NSString stringWithFormat:@"<span class='tag'>%@</span>   ", s]];
+    }
+    
+    return tagString;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -135,7 +165,11 @@
 
     [self applyBottomBarText];
     
-    tool.items = [NSArray arrayWithObjects: [btnViewController likeBarButton], [btnViewController commentBarButton], [btnViewController numberBarButton], nil];        
+    tool.items = [NSArray arrayWithObjects:[btnViewController likeBarButton], [btnViewController commentBarButton], [btnViewController numberBarButton], nil];        
+    
+    _scrollView.backgroundColor = BACKGROUND_COLOR;
+    
+    defaultImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photoDefault.png"]];
 }
 
 - (void)doLike {
@@ -194,4 +228,26 @@
 	[viewToGo showInView:self.view animated:YES];
 	// [viewToGo release];
 }
+
+- (void) requestDidFinishLoad:(TTURLRequest *) request {
+    [SVProgressHUD dismiss];
+    [defaultImageView removeFromSuperview];
+    
+    TTURLJSONResponse *response = request.response;
+    NSArray *array = [response.rootObject objectForKey:@"shares"];
+    
+    if ([array count]>0) {
+        [self setupPhotoView:[array objectAtIndex:0]];
+    }
+}
+
+- (void) request:(TTURLRequest*)request didFailLoadWithError:(NSError*)error {
+    [SVProgressHUD dismissWithError:NSLocalizedString(@"loading_error", nil)];
+    
+    [self.view addSubview:defaultImageView];
+    [defaultImageView setCenter:self.view.center];
+    
+    [self showEmpty:NO];
+}
+
 @end

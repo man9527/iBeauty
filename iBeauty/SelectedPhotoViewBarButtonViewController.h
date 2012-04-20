@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SelectedPhotoViewBarButtonViewController : UIViewController
+@interface SelectedPhotoViewBarButtonViewController : UIViewController <TTURLRequestDelegate>
 {
     IBOutlet UIBarButtonItem* likeBarButton;
     IBOutlet UIBarButtonItem* commentBarButton;

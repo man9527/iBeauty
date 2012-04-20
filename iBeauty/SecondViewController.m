@@ -10,6 +10,10 @@
 #import "SelectedPhotoViewController.h"
 #import "Constants.h"
 #import "TTCoverFlowImageView.h"
+#import "ServiceClient.h"
+#import "extThree20JSON/extThree20JSON.h"
+#import "SVProgressHUD.h"
+#import "DomainObject.h"
 
 @interface SecondViewController ()
 
@@ -33,15 +37,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+    self.view.backgroundColor = BACKGROUND_COLOR;
+    tryAgainLabel.text = NSLocalizedString(@"tryagain", nil);
+    [tryAgainLabel sizeToFit];
+    [tryAgainLabel setCenter:self.view.center];
+    
+    [self beginLoad:self];
+}
+
+- (IBAction)beginLoad:(id)sender {
+    tryAgainLabel.hidden = YES;
+    tryAgainButton.hidden = YES;
+    [SVProgressHUD showWithStatus:NSLocalizedString(@"loading", nil)];
+    [[ServiceClient sharedInstance] getExpertsShare:self];
+}
+
+-(void) setupCoverFlow:(NSArray*)shares {
 	// Setup the covers
-	covers = [NSArray arrayWithObjects:
-			   @"http://img01.taobaocdn.com/imgextra/i1/381131249/T2JV5zXgpaXXXXXXXX_!!381131249.jpg",@"http://img01.taobaocdn.com/imgextra/i1/381131249/T29VSzXkhaXXXXXXXX_!!381131249.jpg",
-			   @"http://img04.taobaocdn.com/imgextra/i4/381131249/T2ap5zXhlaXXXXXXXX_!!381131249.jpg",@"http://img01.taobaocdn.com/imgextra/i1/381131249/T2bF5zXhhaXXXXXXXX_!!381131249.jpg",
-			   @"http://img03.taobaocdn.com/imgextra/i3/381131249/T28aezXbxaXXXXXXXX_!!381131249.jpg",@"http://img02.taobaocdn.com/imgextra/i2/381131249/T2wpSzXlhaXXXXXXXX_!!381131249.jpg",
-			   @"http://img01.taobaocdn.com/imgextra/i1/381131249/T29VSzXkhaXXXXXXXX_!!381131249.jpg",@"http://img01.taobaocdn.com/imgextra/i1/381131249/T29VSzXkhaXXXXXXXX_!!381131249.jpg",
-			   @"http://img01.taobaocdn.com/imgextra/i1/381131249/T2JV5zXgpaXXXXXXXX_!!381131249.jpg",nil];
-         
+//	covers = [NSArray arrayWithObjects:
+//              @"http://img01.taobaocdn.com/imgextra/i1/381131249/T2JV5zXgpaXXXXXXXX_!!381131249.jpg",@"http://img01.taobaocdn.com/imgextra/i1/381131249/T29VSzXkhaXXXXXXXX_!!381131249.jpg",
+//              @"http://img04.taobaocdn.com/imgextra/i4/381131249/T2ap5zXhlaXXXXXXXX_!!381131249.jpg",@"http://img01.taobaocdn.com/imgextra/i1/381131249/T2bF5zXhhaXXXXXXXX_!!381131249.jpg",
+//              @"http://img03.taobaocdn.com/imgextra/i3/381131249/T28aezXbxaXXXXXXXX_!!381131249.jpg",@"http://img02.taobaocdn.com/imgextra/i2/381131249/T2wpSzXlhaXXXXXXXX_!!381131249.jpg",
+//              @"http://img01.taobaocdn.com/imgextra/i1/381131249/T29VSzXkhaXXXXXXXX_!!381131249.jpg",@"http://img01.taobaocdn.com/imgextra/i1/381131249/T29VSzXkhaXXXXXXXX_!!381131249.jpg",
+//              @"http://img01.taobaocdn.com/imgextra/i1/381131249/T2JV5zXgpaXXXXXXXX_!!381131249.jpg",nil];
+    
+    covers = shares;
+
 	// Add the coverflow view
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -57,12 +78,12 @@
     coverflow.coverSpacing = 50; 
     
 	[self.view addSubview:coverflow];
-	[coverflow setNumberOfCovers:9];
+	[coverflow setNumberOfCovers:[covers count]];
 }
- 
+
 #pragma Coverflow delegate methods
 - (void) coverflowView:(TKCoverflowView*)coverflowView coverAtIndexWasBroughtToFront:(int)index{
-    //	NSLog(@"Front %d",index);
+   
 }        
 
 - (TKCoverflowCoverView*) coverflowView:(TKCoverflowView*)coverflowView coverAtIndex:(int)index{
@@ -84,7 +105,7 @@
 	}   
 
     TTCoverFlowImageView* imgView = (TTCoverFlowImageView*)[cover getImageView];
-    imgView.urlPath = [covers objectAtIndex:index];
+    imgView.urlPath = [[covers objectAtIndex:index] objectForKey:@"avatar"];
     
     if (imgView.isLoaded) {
         [cover resetImage];
@@ -102,8 +123,13 @@
     
     [[self navigationItem] setBackBarButtonItem: newBackButton];
     
-	SelectedPhotoViewController* s = [[SelectedPhotoViewController alloc] initWithNibName:nil bundle:nil];
-    [self.navigationController pushViewController:s animated:YES];
+    NSDictionary* ss = [covers objectAtIndex:index];
+    NSString* shareId = [ss objectForKey:@"id"];
+    
+    TTURLAction* action = [TTURLAction actionWithURLPath:[NSString stringWithFormat:@"tt://selectedPhoto/%@", shareId]];
+    
+    action.animated = YES;
+    [[TTNavigator navigator] openURLAction:action];
 }
 
 
@@ -154,6 +180,19 @@
     frame.origin.x = - (screenWidth - titleViewWidth)/2 + 10;
     logoView.frame = frame;
 
+}
+
+- (void) requestDidFinishLoad:(TTURLRequest *) request {
+    [SVProgressHUD dismiss];
+    TTURLJSONResponse *response = request.response;
+    NSArray *array = [response.rootObject objectForKey:@"beauty_stars"];
+    [self setupCoverFlow:array];
+}
+
+- (void) request:(TTURLRequest*)request didFailLoadWithError:(NSError*)error {
+    [SVProgressHUD dismissWithError:NSLocalizedString(@"loading_error", nil)];
+    tryAgainLabel.hidden = NO;
+    tryAgainButton.hidden = NO;
 }
 
 - (void)viewDidUnload

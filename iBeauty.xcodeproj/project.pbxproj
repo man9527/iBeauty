@@ -16,6 +16,8 @@
 		320CC833B8AF0ACFD35E6225 /* libThree20Style.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320CC833B8AF0ACFD35E6224 /* libThree20Style.a */; };
 		320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320D7DCCE32703ACAB9A45E4 /* libThree20.a */; };
 		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
+		A933B83615419C1600E48FB3 /* reloadButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A933B83415419C1600E48FB3 /* reloadButton.png */; };
+		A933B83715419C1600E48FB3 /* reloadButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A933B83515419C1600E48FB3 /* reloadButton@2x.png */; };
 		A9781D03152FF92C00E8E887 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9781D02152FF92C00E8E887 /* UIKit.framework */; };
 		A9781D05152FF92C00E8E887 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9781D04152FF92C00E8E887 /* Foundation.framework */; };
 		A9781D07152FF92C00E8E887 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9781D06152FF92C00E8E887 /* CoreGraphics.framework */; };
@@ -50,6 +52,15 @@
 		A986085A153B077E00D8E330 /* like_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9860854153B077E00D8E330 /* like_off@2x.png */; };
 		A986089E153B444B00D8E330 /* CommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = A986089D153B444A00D8E330 /* CommentController.m */; };
 		A98608A2153C66E200D8E330 /* CommentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98608A0153C66E100D8E330 /* CommentListViewController.m */; };
+		A98608AD153DAFE500D8E330 /* CommentInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A98608AC153DAFE400D8E330 /* CommentInputView.xib */; };
+		A98608B0153DD8F200D8E330 /* URLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A98608AF153DD8F000D8E330 /* URLManager.m */; };
+		A98608B3153EFF3700D8E330 /* ServiceClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A98608B2153EFF3500D8E330 /* ServiceClient.m */; };
+		A98608C5153F082A00D8E330 /* libextThree20JSON+SBJSON.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A98608C0153F05EF00D8E330 /* libextThree20JSON+SBJSON.a */; };
+		A98608CE153F2E7300D8E330 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A98608CD153F2E7100D8E330 /* TabBarController.m */; };
+		A98608DB15404DE100D8E330 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A98608D815404DE100D8E330 /* SVProgressHUD.bundle */; };
+		A98608DC15404DE100D8E330 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A98608DA15404DE100D8E330 /* SVProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A98608DF154055BE00D8E330 /* DomainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A98608DE154055BB00D8E330 /* DomainObject.m */; };
+		A98608E315405AE900D8E330 /* ShareInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A98608E215405AE900D8E330 /* ShareInfo.m */; };
 		A9A3B1F61531638700B5BD70 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A3B1F51531638600B5BD70 /* BaseViewController.m */; };
 		A9A3B1F81531830700B5BD70 /* photo01.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A3B1F71531830700B5BD70 /* photo01.png */; };
 		A9A3B20B1531860700B5BD70 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A3B20A1531860700B5BD70 /* MapKit.framework */; };
@@ -175,6 +186,48 @@
 			remoteGlobalIDString = A9781CFD152FF92C00E8E887;
 			remoteInfo = iBeauty;
 		};
+		A98608BF153F05EF00D8E330 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A98608B4153F05ED00D8E330 /* extThree20JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BEF31F3A0F352DF5000DE5D2;
+			remoteInfo = "extThree20JSON+SBJSON";
+		};
+		A98608C1153F05EF00D8E330 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A98608B4153F05ED00D8E330 /* extThree20JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6E645BD91187751200F08CB1;
+			remoteInfo = "extThree20JSON+YAJL";
+		};
+		A98608C3153F05EF00D8E330 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A98608B4153F05ED00D8E330 /* extThree20JSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB9E6C6210B6A8F800DE563C;
+			remoteInfo = "extThree20JSONUnitTests+SBJSON";
+		};
+		A98608C6153F0AF500D8E330 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A98608B4153F05ED00D8E330 /* extThree20JSON.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BEF31F390F352DF5000DE5D2;
+			remoteInfo = "extThree20JSON+SBJSON";
+		};
+		A98608C8153F0AF500D8E330 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A98608B4153F05ED00D8E330 /* extThree20JSON.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E645BA31187751200F08CB1;
+			remoteInfo = "extThree20JSON+YAJL";
+		};
+		A98608CA153F0AF500D8E330 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A98608B4153F05ED00D8E330 /* extThree20JSON.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EB9E6C6110B6A8F800DE563C;
+			remoteInfo = "extThree20JSONUnitTests+SBJSON";
+		};
 		A9A3B2041531855A00B5BD70 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A9A3B1FC1531855A00B5BD70 /* TapkuLibrary.xcodeproj */;
@@ -257,6 +310,8 @@
 		320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Style.xcodeproj; path = Libraries/three20/src/Three20Style/Three20Style.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = Libraries/three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = Libraries/three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
+		A933B83415419C1600E48FB3 /* reloadButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reloadButton.png; path = images/reloadButton.png; sourceTree = "<group>"; };
+		A933B83515419C1600E48FB3 /* reloadButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "reloadButton@2x.png"; path = "images/reloadButton@2x.png"; sourceTree = "<group>"; };
 		A9781CFE152FF92C00E8E887 /* iBeauty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBeauty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9781D02152FF92C00E8E887 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9781D04152FF92C00E8E887 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -304,6 +359,21 @@
 		A986089D153B444A00D8E330 /* CommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentController.m; sourceTree = "<group>"; };
 		A986089F153C66E100D8E330 /* CommentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentListViewController.h; sourceTree = "<group>"; };
 		A98608A0153C66E100D8E330 /* CommentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentListViewController.m; sourceTree = "<group>"; };
+		A98608AC153DAFE400D8E330 /* CommentInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentInputView.xib; sourceTree = "<group>"; };
+		A98608AE153DD8EF00D8E330 /* URLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLManager.h; sourceTree = "<group>"; };
+		A98608AF153DD8F000D8E330 /* URLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLManager.m; sourceTree = "<group>"; };
+		A98608B1153EFF3300D8E330 /* ServiceClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceClient.h; sourceTree = "<group>"; };
+		A98608B2153EFF3500D8E330 /* ServiceClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceClient.m; sourceTree = "<group>"; };
+		A98608B4153F05ED00D8E330 /* extThree20JSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = extThree20JSON.xcodeproj; path = Libraries/three20/src/extThree20JSON/extThree20JSON.xcodeproj; sourceTree = "<group>"; };
+		A98608CC153F2E6E00D8E330 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		A98608CD153F2E7100D8E330 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		A98608D815404DE100D8E330 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		A98608D915404DE100D8E330 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		A98608DA15404DE100D8E330 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		A98608DD154055B700D8E330 /* DomainObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomainObject.h; sourceTree = "<group>"; };
+		A98608DE154055BB00D8E330 /* DomainObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomainObject.m; sourceTree = "<group>"; };
+		A98608E115405AE900D8E330 /* ShareInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareInfo.h; sourceTree = "<group>"; };
+		A98608E215405AE900D8E330 /* ShareInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareInfo.m; sourceTree = "<group>"; };
 		A9A3B1F41531638600B5BD70 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		A9A3B1F51531638600B5BD70 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		A9A3B1F71531830700B5BD70 /* photo01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo01.png; sourceTree = "<group>"; };
@@ -336,6 +406,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A98608C5153F082A00D8E330 /* libextThree20JSON+SBJSON.a in Frameworks */,
 				3201088596B4756681693705 /* libThree20UICommon.a in Frameworks */,
 				320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */,
 				320A737074758E53BA54BE95 /* libThree20UINavigator.a in Frameworks */,
@@ -431,6 +502,8 @@
 		A9781CF3152FF92B00E8E887 = {
 			isa = PBXGroup;
 			children = (
+				A98608D715404DE000D8E330 /* SVProgressHUD */,
+				A98608B4153F05ED00D8E330 /* extThree20JSON.xcodeproj */,
 				A9A3B20C1531861100B5BD70 /* QuartzCore.framework */,
 				A9A3B20A1531860700B5BD70 /* MapKit.framework */,
 				A9781D08152FF92C00E8E887 /* iBeauty */,
@@ -472,29 +545,25 @@
 		A9781D08152FF92C00E8E887 /* iBeauty */ = {
 			isa = PBXGroup;
 			children = (
+				A98608E015405AB600D8E330 /* DTO */,
 				A9E648A81531EC9100CD3DA7 /* images */,
 				A9781D09152FF92C00E8E887 /* Supporting Files */,
 				A9C77DB9153021880097F4B4 /* Localizable.strings */,
-				A9A3B21115318A6300B5BD70 /* photo01.jpg */,
-				A9A3B213153192BD00B5BD70 /* photo02.jpg */,
-				A9A3B1F71531830700B5BD70 /* photo01.png */,
 				A9781D11152FF92C00E8E887 /* AppDelegate.h */,
 				A9781D12152FF92C00E8E887 /* AppDelegate.m */,
+				A98608CC153F2E6E00D8E330 /* TabBarController.h */,
+				A98608CD153F2E7100D8E330 /* TabBarController.m */,
 				A9A3B1F41531638600B5BD70 /* BaseViewController.h */,
 				A9A3B1F51531638600B5BD70 /* BaseViewController.m */,
 				A9781D17152FF92C00E8E887 /* FirstViewController.h */,
 				A9781D18152FF92C00E8E887 /* FirstViewController.m */,
 				A9CA382315347724006C07CF /* FirstViewController.xib */,
-				A9781D1A152FF92C00E8E887 /* first.png */,
-				A9781D1C152FF92C00E8E887 /* first@2x.png */,
 				A9781D1E152FF92C00E8E887 /* SecondViewController.h */,
 				A9781D1F152FF92C00E8E887 /* SecondViewController.m */,
 				A9CA38251534777F006C07CF /* SecondViewController.xib */,
 				A9781D42152FFA4A00E8E887 /* ThirdViewController.h */,
 				A9781D43152FFA4A00E8E887 /* ThirdViewController.m */,
 				A9CA3827153477A1006C07CF /* ThirdViewController.xib */,
-				A9781D21152FF92C00E8E887 /* second.png */,
-				A9781D23152FF92C00E8E887 /* second@2x.png */,
 				A9A3B27015332D7900B5BD70 /* TTStyledCaptionPhotoView.h */,
 				A9A3B27115332D7900B5BD70 /* TTStyledCaptionPhotoView.m */,
 				A9A8A34715333365001DB596 /* MockPhotoSource.h */,
@@ -512,6 +581,13 @@
 				A986089D153B444A00D8E330 /* CommentController.m */,
 				A986089F153C66E100D8E330 /* CommentListViewController.h */,
 				A98608A0153C66E100D8E330 /* CommentListViewController.m */,
+				A98608AC153DAFE400D8E330 /* CommentInputView.xib */,
+				A98608AE153DD8EF00D8E330 /* URLManager.h */,
+				A98608AF153DD8F000D8E330 /* URLManager.m */,
+				A98608B1153EFF3300D8E330 /* ServiceClient.h */,
+				A98608B2153EFF3500D8E330 /* ServiceClient.m */,
+				A98608DD154055B700D8E330 /* DomainObject.h */,
+				A98608DE154055BB00D8E330 /* DomainObject.m */,
 			);
 			path = iBeauty;
 			sourceTree = "<group>";
@@ -548,6 +624,36 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A98608B5153F05ED00D8E330 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A98608C0153F05EF00D8E330 /* libextThree20JSON+SBJSON.a */,
+				A98608C2153F05EF00D8E330 /* libextThree20JSON+YAJL.a */,
+				A98608C4153F05EF00D8E330 /* extJSONUnitTests+SBJSON.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A98608D715404DE000D8E330 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				A98608D815404DE100D8E330 /* SVProgressHUD.bundle */,
+				A98608D915404DE100D8E330 /* SVProgressHUD.h */,
+				A98608DA15404DE100D8E330 /* SVProgressHUD.m */,
+			);
+			name = SVProgressHUD;
+			path = Libraries/SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		A98608E015405AB600D8E330 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				A98608E115405AE900D8E330 /* ShareInfo.h */,
+				A98608E215405AE900D8E330 /* ShareInfo.m */,
+			);
+			name = DTO;
+			sourceTree = "<group>";
+		};
 		A9A3B1FD1531855A00B5BD70 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -560,6 +666,15 @@
 		A9E648A81531EC9100CD3DA7 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				A933B83415419C1600E48FB3 /* reloadButton.png */,
+				A933B83515419C1600E48FB3 /* reloadButton@2x.png */,
+				A9A3B21115318A6300B5BD70 /* photo01.jpg */,
+				A9A3B213153192BD00B5BD70 /* photo02.jpg */,
+				A9A3B1F71531830700B5BD70 /* photo01.png */,
+				A9781D21152FF92C00E8E887 /* second.png */,
+				A9781D23152FF92C00E8E887 /* second@2x.png */,
+				A9781D1A152FF92C00E8E887 /* first.png */,
+				A9781D1C152FF92C00E8E887 /* first@2x.png */,
 				A986084F153B077E00D8E330 /* comment.png */,
 				A9860850153B077E00D8E330 /* like_btn_bg.png */,
 				A9860851153B077E00D8E330 /* like_off.png */,
@@ -591,6 +706,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				A98608C7153F0AF500D8E330 /* PBXTargetDependency */,
+				A98608C9153F0AF500D8E330 /* PBXTargetDependency */,
+				A98608CB153F0AF500D8E330 /* PBXTargetDependency */,
 				3201088596B4756681693701 /* PBXTargetDependency */,
 				320D7DCCE32703ACAB9A45E1 /* PBXTargetDependency */,
 				320A737074758E53BA54BE91 /* PBXTargetDependency */,
@@ -645,6 +763,10 @@
 			productRefGroup = A9781CFF152FF92C00E8E887 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = A98608B5153F05ED00D8E330 /* Products */;
+					ProjectRef = A98608B4153F05ED00D8E330 /* extThree20JSON.xcodeproj */;
+				},
 				{
 					ProductGroup = A9A3B1FD1531855A00B5BD70 /* Products */;
 					ProjectRef = A9A3B1FC1531855A00B5BD70 /* TapkuLibrary.xcodeproj */;
@@ -734,6 +856,27 @@
 			fileType = archive.ar;
 			path = libThree20UI.a;
 			remoteRef = 320F2C48872C2E2C4DF86206 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A98608C0153F05EF00D8E330 /* libextThree20JSON+SBJSON.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libextThree20JSON+SBJSON.a";
+			remoteRef = A98608BF153F05EF00D8E330 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A98608C2153F05EF00D8E330 /* libextThree20JSON+YAJL.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libextThree20JSON+YAJL.a";
+			remoteRef = A98608C1153F05EF00D8E330 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A98608C4153F05EF00D8E330 /* extJSONUnitTests+SBJSON.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "extJSONUnitTests+SBJSON.octest";
+			remoteRef = A98608C3153F05EF00D8E330 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		A9A3B2051531855A00B5BD70 /* libTapkuLibrary.a */ = {
@@ -835,6 +978,10 @@
 				A9860858153B077E00D8E330 /* like_btn_bg@2x.png in Resources */,
 				A9860859153B077E00D8E330 /* comment@2x.png in Resources */,
 				A986085A153B077E00D8E330 /* like_off@2x.png in Resources */,
+				A98608AD153DAFE500D8E330 /* CommentInputView.xib in Resources */,
+				A98608DB15404DE100D8E330 /* SVProgressHUD.bundle in Resources */,
+				A933B83615419C1600E48FB3 /* reloadButton.png in Resources */,
+				A933B83715419C1600E48FB3 /* reloadButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,6 +1030,12 @@
 				A986084D1539E52D00D8E330 /* SelectedPhotoViewBarButtonViewController.m in Sources */,
 				A986089E153B444B00D8E330 /* CommentController.m in Sources */,
 				A98608A2153C66E200D8E330 /* CommentListViewController.m in Sources */,
+				A98608B0153DD8F200D8E330 /* URLManager.m in Sources */,
+				A98608B3153EFF3700D8E330 /* ServiceClient.m in Sources */,
+				A98608CE153F2E7300D8E330 /* TabBarController.m in Sources */,
+				A98608DC15404DE100D8E330 /* SVProgressHUD.m in Sources */,
+				A98608DF154055BE00D8E330 /* DomainObject.m in Sources */,
+				A98608E315405AE900D8E330 /* ShareInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -936,6 +1089,21 @@
 			isa = PBXTargetDependency;
 			target = A9781CFD152FF92C00E8E887 /* iBeauty */;
 			targetProxy = A9781D2F152FF92C00E8E887 /* PBXContainerItemProxy */;
+		};
+		A98608C7153F0AF500D8E330 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "extThree20JSON+SBJSON";
+			targetProxy = A98608C6153F0AF500D8E330 /* PBXContainerItemProxy */;
+		};
+		A98608C9153F0AF500D8E330 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "extThree20JSON+YAJL";
+			targetProxy = A98608C8153F0AF500D8E330 /* PBXContainerItemProxy */;
+		};
+		A98608CB153F0AF500D8E330 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "extThree20JSONUnitTests+SBJSON";
+			targetProxy = A98608CA153F0AF500D8E330 /* PBXContainerItemProxy */;
 		};
 		A9A3B209153185E500B5BD70 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1060,7 +1228,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Libraries/TapkuLibrary/ $(BUILT_PRODUCTS_DIR)/../../three20/";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Libraries/TapkuLibrary/ $(BUILT_PRODUCTS_DIR)/../../three20/ ../three20/Build/Products/three20 ../../frameworks/three20/Build/Products/three20 ../frameworks/three20/Build/Products/three20 $(BUILT_PRODUCTS_DIR)/../three20";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1082,7 +1250,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Libraries/TapkuLibrary/ $(BUILT_PRODUCTS_DIR)/../../three20/";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Libraries/TapkuLibrary/ $(BUILT_PRODUCTS_DIR)/../../three20/ ../three20/Build/Products/three20 ../../frameworks/three20/Build/Products/three20 ../frameworks/three20/Build/Products/three20 $(BUILT_PRODUCTS_DIR)/../three20";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

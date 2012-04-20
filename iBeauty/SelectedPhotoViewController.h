@@ -27,6 +27,11 @@
     IBOutlet UILabel* commentLabel;
     IBOutlet UILabel* likeNumberLabel;
     IBOutlet UILabel* commentNumberLabel;
+    
+    NSInteger shareId;
+    UIImageView *defaultImageView;
 }
+
+- (id)initWithShareId:(NSInteger)sharedId;
 
 @end

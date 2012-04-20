@@ -7,16 +7,20 @@
 //
 
 #import "AppDelegate.h"
+#import "TabBarController.h"
+
 #import "FirstViewController.h"
 #import "SecondViewController.h"
 #import "ThirdViewController.h"
+#import "SelectedPhotoViewController.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+// - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (void)applicationDidFinishLaunching:(UIApplication *)application 
 {
     TTNavigator* navigator = [TTNavigator navigator];
     navigator.supportsShakeToReload = YES;
@@ -25,29 +29,47 @@
     TTURLMap* map = navigator.URLMap;
     [map from:@"*" toViewController:[TTWebController class]];    
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    UIViewController *viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController" bundle:nil];
-    UIViewController *viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
-    UIViewController *viewController3 = [[ThirdViewController alloc] initWithNibName:@"ThirdViewController" bundle:nil];
+    [map from:@"tt://tabBar/(initWithSelectedIndex:)" toSharedViewController:[TabBarController class]];
+    [map from:@"tt://firstTab" toSharedViewController:[FirstViewController class]];
+    [map from:@"tt://secondTab" toSharedViewController:[SecondViewController class]];
+    [map from:@"tt://thirdTab" toSharedViewController:[ThirdViewController class]];
+    [map from:@"tt://selectedPhoto/(initWithShareId:)" toSharedViewController:[SelectedPhotoViewController class]];
     
-    UINavigationController *navController1 = [[UINavigationController alloc] initWithRootViewController:viewController1];
-    UINavigationController *navController2 = [[UINavigationController alloc] initWithRootViewController:viewController2];
-    UINavigationController *navController3 = [[UINavigationController alloc] initWithRootViewController:viewController3];
-    
-    self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:navController1, navController2, navController3, nil];
-    
-    // self.tabBarController.tabBar.tintColor = [UIColor redColor];
-    self.window.rootViewController = self.tabBarController;
-    [self.window makeKeyAndVisible];
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    
+//    // Override point for customization after application launch.
+//    UIViewController *viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController" bundle:nil];
+//    UIViewController *viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController" bundle:nil];
+//    UIViewController *viewController3 = [[ThirdViewController alloc] initWithNibName:@"ThirdViewController" bundle:nil];
+//    
+//    UINavigationController *navController1 = [[UINavigationController alloc] initWithRootViewController:viewController1];
+//    UINavigationController *navController2 = [[UINavigationController alloc] initWithRootViewController:viewController2];
+//    UINavigationController *navController3 = [[UINavigationController alloc] initWithRootViewController:viewController3];
+//    
+//    self.tabBarController = [[UITabBarController alloc] init];
+//    self.tabBarController.viewControllers = [NSArray arrayWithObjects:navController1, navController2, navController3, nil];
+//    
+//    self.window.rootViewController = self.tabBarController;
+//    [self.window makeKeyAndVisible];
+//
+//    // Override point for customization after application launch.
+//    UITabBarController* root = (UITabBarController*)self.window.rootViewController;
+//    root.selectedIndex = 1;
 
-    // Override point for customization after application launch.
-    UITabBarController* root = (UITabBarController*)self.window.rootViewController;
-    root.selectedIndex = 1;
-    return YES;
+    //if (![navigator restoreViewControllers]) {
+       [navigator openURLAction:[TTURLAction actionWithURLPath:@"tt://tabBar/1"]];
+    //[navigator openURLAction:[TTURLAction actionWithURLPath:@"tt://selectedPhoto"]];
+    //}
+    
+    // return YES;
 }
-							
+
+
+//- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+//    [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:url.absoluteString]];
+//    return YES;
+//}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
